@@ -528,7 +528,7 @@
             <h1 class="hero-title">重新定义<br><span class="gradient-text">前沿科学推理</span>的边界</h1>
             <p class="tagline">一个高难度、跨学科的前沿科学推理基准，旨在为通往通用人工智能的进程提供一把可靠的“标尺”。</p>
             <div class="cta-buttons">
-                <a href="https://huggingface.co/datasets/sage-benchmark/sage" class="btn btn-primary" target="_blank">
+                <a href="https://huggingface.co/datasets/opencompass/SAGE" class="btn btn-primary" target="_blank">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10L12 15L17 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 15V3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     <span>访问数据集</span>
                 </a>
@@ -560,46 +560,6 @@
                 <li><strong>严格的质量控制：</strong> 所有问题均由博士及以上水平的领域专家手工创建，并经过多轮专家同行评审和对抗性测试，以确保其难度、科学价值和正确性。</li>
             </ul>
         </section>
-        
-        <section id="data-anatomy" class="card">
-            <h2>数据剖析</h2>
-            <div id="data-anatomy-viewer">
-                <div class="sample-header">
-                    <div id="sample-domain-display" class="sample-domain">物理</div>
-                    <div class="sample-nav">
-                        <button id="prev-sample-btn" class="sample-nav-btn">&larr;</button>
-                        <button id="next-sample-btn" class="sample-nav-btn">&rarr;</button>
-                    </div>
-                </div>
-                <div class="sample-display-box">
-                    <h3>Question</h3>
-                    <p id="sample-question"></p>
-                </div>
-                <div class="sample-display-box">
-                    <h3>Answer</h3>
-                    <p id="sample-answer"></p>
-                </div>
-            </div>
-        </section>
-
-        <section id="usage" class="card">
-            <h2>访问与使用</h2>
-            <p>我们推荐使用Hugging Face `datasets`库来加载数据，这能极大地简化您的工作流程。</p>
-            <div class="code-block-wrapper">
-                 <div class="code-block-header">
-                    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                    <span>load_data.py</span>
-                </div>
-                <pre><code><span class="keyword">from</span> datasets <span class="keyword">import</span> load_dataset
-
-<span class="comment"># 一行代码即可加载</span>
-dataset = load_dataset(
-<span class="string">"sage-benchmark/sage"</span>
-)</code></pre>
-            </div>
-            <h3>评估脚本</h3>
-            <p>为保证结果的可比性，请使用我们的官方评估脚本。我们提出一个利用LLM作为评判者的可扩展评估流程。详细指南请见我们的 <a href="https://github.com/sage-benchmark/sage-eval" target="_blank">GitHub仓库</a>。</p>
-        </section>
 
         <section id="leaderboard">
             <h2>排行榜</h2>
@@ -623,10 +583,11 @@ dataset = load_dataset(
                             <tr><td>1</td><td><a href="#">OpenAI o3</a></td><td>OpenAI</td><td><span class="tag api">API</span></td><td>35.6%</td><td>24.3%</td></tr>
                             <tr><td>2</td><td><a href="#">Gemini-2.5-Pro</a></td><td>Google</td><td><span class="tag api">API</span></td><td>34.9%</td><td>22.6%</td></tr>
                             <tr><td>3</td><td><a href="#">Grok-4</a></td><td>xAI</td><td><span class="tag api">API</span></td><td>32.9%</td><td>23.6%</td></tr>
-                            <tr><td>4</td><td><a href="#">DeepSeek-R1-0528</a></td><td>DeepSeek AI</td><td><span class="tag api">API</span></td><td>25.8%</td><td>13.5%</td></tr>
+                            <tr><td>4</td><td><a href="#">DeepSeek-R1-0528</a></td><td>DeepSeek AI</td><td><span class="tag open">Open</span></td><td>25.8%</td><td>13.5%</td></tr>
                             <tr><td>5</td><td><a href="#">Doubao-Seed-1.6-thinking</a></td><td>ByteDance</td><td><span class="tag api">API</span></td><td>25.3%</td><td>16.1%</td></tr>
-                            <tr><td>6</td><td><a href="#">Qwen3-235B-A22B</a></td><td>Alibaba Cloud</td><td><span class="tag open">Open</span></td><td>18.5%</td><td>9.6%</td></tr>
-                            <tr><td>7</td><td><a href="#">Llama-3.1-405B</a></td><td>Meta</td><td><span class="tag open">Open</span></td><td>17.1%</td><td>8.5%</td></tr>
+                            <tr><td>6</td><td><a href="#">OpenAI o4-mini</a></td><td>OpenAI</td><td><span class="tag api">API</span></td><td>21.8%</td><td>12.0%</td></tr>
+                            <tr><td>7</td><td><a href="#">Qwen3-235B-A22B</a></td><td>Alibaba Cloud</td><td><span class="tag open">Open</span></td><td>18.5%</td><td>9.6%</td></tr>
+
                         </tbody>
                     </table>
                     <div class="chart-container">
@@ -640,15 +601,18 @@ dataset = load_dataset(
                         <thead>
                             <tr><th>排名</th><th>模型</th><th>机构</th><th>访问类型</th><th>准确率 (Avg)</th><th>mG-Pass@4</th></tr>
                         </thead>
-                        <tbody>
-                            <tr><td>1</td><td><a href="#">OpenAI o3</a></td><td>OpenAI</td><td><span class="tag api">API</span></td><td>31.2%</td><td>20.5%</td></tr>
-                            <tr><td>2</td><td><a href="#">Gemini-2.5-Pro</a></td><td>Google</td><td><span class="tag api">API</span></td><td>30.5%</td><td>19.8%</td></tr>
-                            <tr><td>3</td><td><a href="#">Grok-4</a></td><td>xAI</td><td><span class="tag api">API</span></td><td>28.7%</td><td>21.1%</td></tr>
-                            <tr><td>4</td><td><a href="#">DeepSeek-R1-0528</a></td><td>DeepSeek AI</td><td><span class="tag api">API</span></td><td>21.4%</td><td>11.2%</td></tr>
-                            <tr><td>5</td><td><a href="#">Doubao-Seed-1.6-thinking</a></td><td>ByteDance</td><td><span class="tag api">API</span></td><td>20.9%</td><td>13.3%</td></tr>
-                            <tr><td>6</td><td><a href="#">Qwen3-235B-A22B</a></td><td>Alibaba Cloud</td><td><span class="tag open">Open</span></td><td>15.3%</td><td>7.4%</td></tr>
-                            <tr><td>7</td><td><a href="#">Llama-3.1-405B</a></td><td>Meta</td><td><span class="tag open">Open</span></td><td>14.8%</td><td>6.9%</td></tr>
-                        </tbody>
+
+                            <tbody>
+                                <tr><td>1</td><td><a href="#">Gemini-2.5-Pro</a></td><td>Google</td><td><span class="tag api">API</span></td><td>39.1%</td><td>27.5%</td></tr>
+                                <tr><td>2</td><td><a href="#">OpenAI o3</a></td><td>OpenAI</td><td><span class="tag api">API</span></td><td>38.5%</td><td>24.2%</td></tr>
+                                <tr><td>3</td><td><a href="#">Grok-4</a></td><td>xAI</td><td><span class="tag api">API</span></td><td>35.0%</td><td>24.1%</td></tr>
+                                <tr><td>4</td><td><a href="#">Doubao-Seed-1.6-thinking</a></td><td>ByteDance</td><td><span class="tag api">API</span></td><td>27.7%</td><td>16.8%</td></tr>
+                                <tr><td>5</td><td><a href="#">DeepSeek-R1-0528</a></td><td>DeepSeek AI</td><td><span class="tag open">Open</span></td><td>26.1%</td><td>14.1%</td></tr>
+                                <tr><td>6</td><td><a href="#">OpenAI o4-mini</a></td><td>OpenAI</td><td><span class="tag api">API</span></td><td>23.5%</td><td>11.9%</td></tr>
+                                <tr><td>7</td><td><a href="#">Qwen3-235B-A22B</a></td><td>Alibaba Cloud</td><td><span class="tag open">Open</span></td><td>20.1%</td><td>9.6%</td></tr>
+                            </tbody>
+
+
                     </table>
                     <div class="chart-container">
                         <canvas id="chart-private"></canvas>
@@ -657,6 +621,53 @@ dataset = load_dataset(
 
             </div>
         </section>
+        
+        <section id="data-anatomy" class="card">
+            <h2>数据剖析</h2>
+            <div id="data-anatomy-viewer">
+                <div class="sample-header">
+                    <div id="sample-domain-display" class="sample-domain">物理</div>
+                    <div class="sample-nav">
+                        <button id="prev-sample-btn" class="sample-nav-btn">&larr;</button>
+                        <button id="next-sample-btn" class="sample-nav-btn">&rarr;</button>
+                    </div>
+                </div>
+                <div class="sample-display-box">
+                    <h3>Question</h3>
+                    <p id="sample-question"></p>
+                </div>
+                <div class="sample-display-box">
+                    <h3>Answer</h3>
+                    <p id="sample-answer"></p>
+                </div>
+                
+                <div class="sample-display-box">
+                    <h3>Organization</h3>
+                    <p id="sample-organization"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="usage" class="card">
+            <h2>访问与使用</h2>
+            <p>我们推荐使用Hugging Face 来加载数据。</p>
+            <div class="code-block-wrapper">
+                 <div class="code-block-header">
+                    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                    <span>load_data.py</span>
+                </div>
+                <pre><code><span class="keyword">from</span> datasets <span class="keyword">import</span> load_dataset
+
+<span class="comment"># 一行代码即可加载</span>
+dataset = load_dataset(
+<span class="string">"opencompass/SAGE"</span>
+)</code></pre>
+            </div>
+            <h3>评估脚本</h3>
+            <p>为保证结果的可比性，请使用我们的官方评估脚本。我们提出一个利用LLM作为评判者的可扩展评估流程。详细指南请见我们的 <a href="https://github.com/opencompass/SAGE" target="_blank">GitHub仓库</a>。</p>
+        </section>
+
+
         
         <div class="grid-layout">
             <section id="technical-details" class="card">
@@ -679,7 +690,7 @@ dataset = load_dataset(
 }</code></pre>
                 </div>
                 <h3>联系我们</h3>
-                <p>如有任何问题或希望贡献，请联系 <a href="mailto:contact@sage-benchmark.org">contact@sage-benchmark.org</a>。</p>
+                <p>如有任何问题或希望贡献，请联系 <a href="mailto:contact@opencompass.org">contact@opencompass.org</a>。</p>
             </section>
         </div>
     </main>
@@ -707,26 +718,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 数据剖析模块 (Data Anatomy Module) ---
     const samples = [
+    {
+        domain: "数学",
+        question: "Let $p$ be an odd prime, and let $m \\geq 0$ and $N \\geq 1$ be integers. Let $\\Lambda$ be a free $\\mathbb{Z}/p^N\\mathbb{Z}$-module of rank $2m + 1$, and let \\[ (,): \\Lambda \\times \\Lambda \\to \\mathbb{Z}/p^N\\mathbb{Z} \\] be a perfect symmetric $\\mathbb{Z}/p^N\\mathbb{Z}$-bilinear form. Here, 'perfect' means that the induced map \\[ \\Lambda \\to \\text{Hom}_{\\mathbb{Z}/p^N\\mathbb{Z}}(\\Lambda, \\mathbb{Z}/p^N\\mathbb{Z}), \\quad x \\mapsto (x, \\cdot) \\] is an isomorphism. Find the number of elements in the set \\[ \\{ x \\in \\Lambda \\mid (x, x) = 0 \\} \\] as a function of $p, m, N$.",
+        answer: "$p^{(2m+1)r + 2m(N-2r)} + \\frac{p^{(2m+1)r} - 1}{p^{(2m+1)} - 1} p^{(2m+1)r-1 + 2m(N-2r)} (p^{2m} - 1)$, where $r := \\lfloor N/2 \\rfloor$",
+        organization: "Fudan University"
+    },
         {
-            domain: "物理",
-            question: "一个质量为 $m$ 的粒子被限制在一个宽度为 $L$ 的一维无限深势阱中。它的归一化波函数由 $\\Psi(x, t) = \\sqrt{\\frac{2}{L}} \\sin\\left(\\frac{n\\pi x}{L}\\right) e^{-iE_n t/\\hbar}$ 给出。请计算在 $x=L/4$ 和 $x=3L/4$ 之间找到该粒子的概率。",
-            answer: "概率 $P$ 是通过计算从 $L/4$ 到 $3L/4$ 的概率密度 $|\\Psi(x,t)|^2$ 的积分得到的。\\n$P = \\int_{L/4}^{3L/4} |\\Psi(x,t)|^2 dx = \\frac{2}{L} \\int_{L/4}^{3L/4} \\sin^2\\left(\\frac{n\\pi x}{L}\\right) dx$\\n使用三角恒等式 $\\sin^2(\\theta) = \\frac{1 - \\cos(2\\theta)}{2}$，我们得到：\\n$P = \\frac{1}{L} \\left[x - \\frac{L}{2n\\pi}\\sin\\left(\\frac{2n\\pi x}{L}\\right)\\right]_{L/4}^{3L/4} = \\frac{1}{2} + \\frac{1}{n\\pi}\\sin\\left(\\frac{n\\pi}{2}\\right)$"
+            domain: "生物",
+            question: "Background: In the innate immune system, RIG-I-like receptor (RLR) family proteins recognize viral RNA in the cytoplasm, triggering the downstream mitochondrial antiviral signaling protein (MAVS). MAVS acts as a signaling adapter, recruiting multiple proteins to form the MAVS signalosome, which activates transcription factors IRF3 and NF-$\kappa$B, inducing the expression of type I and type III interferons (IFNs) and other antiviral genes",
+            answer: "1. Central disordered region\n2. 3'UTR (3' Untranslated Region)\n3. MAVS signalosome complex; phosphorylation level",
+            organization: "School of Medicine, Shanghai Jiao Tong University"
         },
-        {
-            domain: "数学",
-            question: "求积分 $\\int \\frac{1}{x^2 + 4x + 8} dx$。",
-            answer: "首先，对分母进行配方：$x^2 + 4x + 8 = (x^2 + 4x + 4) + 4 = (x+2)^2 + 2^2$。\\n令 $u = x+2$，则 $du = dx$。积分变为：\\n$\\int \\frac{1}{u^2 + 2^2} du$\\n这是一个反正切函数的标准形式 $\\int \\frac{1}{a^2+u^2}du = \\frac{1}{a}\\arctan(\\frac{u}{a}) + C$。\\n这里 $a=2$，所以结果是：\\n$\\frac{1}{2}\\arctan\\left(\\frac{u}{2}\\right) + C = \\frac{1}{2}\\arctan\\left(\\frac{x+2}{2}\\right) + C$"
-        },
+
         {
             domain: "计算机科学",
-            question: "什么是快速排序（Quicksort）算法的平均时间复杂度？并简要描述其最坏情况是如何发生的。",
-            answer: "快速排序的平均时间复杂度是 $O(n \\log n)$。\\n\\n最坏情况发生在每次选择的基准（pivot）都是当前待排序数组中最小或最大的元素时。这会导致分区（partition）操作极不平衡，每次都将数组划分为一个空数组和一个包含 $n-1$ 个元素的子数组。这将使递归树退化成一个线性链，导致算法的时间复杂度变为 $O(n^2)$。这种情况常见于对一个已经排序好的数组进行快速排序，且每次都选择第一个或最后一个元素作为基准。"
+            question: "Given an array $A[1:n]$ of $n$ distinct numbers, recall the *quicksort* algorithm to sort them into an ascending order.\n\n* First we let $p\\gets A[1]$ be the pivot.\n* Then we use $p$ to rearrange $A[1:n]$ in the following way:\n  * For some $k\\in [n]$, we have $A[k]=p$;\n  * For all $i\\in \\set{1,2,\\dots,k-1}$, we have $A[i]<p$;\n  * For all $i\\in \\set{k+1,\\dots,n}$, we have $A[i]>p$.\n* Then recursively sort $A[1:k-1]$ and $A[k+1;n]$.\n\nAssume our algorithm used in step 2 to compute $A[1:k-1]$ and $A[k+1:n]$ is *stable*. That is, if $A[i]$ and $A[j]$ are both smaller or larger than $p$ and $i<j$, then after the rearrangement, $A[i]$ still appear before $A[j]$.\n\nClearly the performance of the algorithm depends on the input array $A$. In this problem, we analyze its *average complexity*. Suppose that the input array $A$ is chosen uniformly at random from the $n!$ permutations of the $n$ distinct numbers. Let $t_n$ be the average times of comparisons during the execution of quicksort (the average is taken over all inputs).\n\nFind the general expression for $t_n$. (In the problem, we do care about the constant appearing in the main term. As a result, your expression should be of the form $t_n=f(n)(1+o(1))$ for some $f(n)$)",
+            answer: "$2n\\log n \\cdot (1+o(1))$",
+            organization: "Shanghai Jiao Tong University"
         }
     ];
 
     let currentSampleIndex = 0;
     const questionEl = document.getElementById('sample-question');
     const answerEl = document.getElementById('sample-answer');
+    const organizationEl = document.getElementById('sample-organization');
     const domainEl = document.getElementById('sample-domain-display');
     const prevBtn = document.getElementById('prev-sample-btn');
     const nextBtn = document.getElementById('next-sample-btn');
@@ -735,6 +751,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const sample = samples[index];
         questionEl.textContent = sample.question;
         answerEl.textContent = sample.answer;
+        organizationEl.textContent = sample.organization;
         domainEl.textContent = sample.domain;
         // Re-render LaTeX
         if (window.renderMathInElement) {
