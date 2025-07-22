@@ -8,6 +8,11 @@
     --color-border: rgba(255, 255, 255, 0.1);
     --color-card-bg: rgba(28, 28, 32, 0.5);
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --chart-color-1: rgba(138, 43, 226, 0.7);
+    --chart-color-1-hover: rgba(138, 43, 226, 1);
+    --chart-color-2: rgba(74, 144, 226, 0.7);
+    --chart-color-2-hover: rgba(74, 144, 226, 1);
+    --glow-gradient: radial-gradient(circle, rgba(138, 43, 226, 0.25) 0%, rgba(17, 16, 21, 0) 60%);
 }
 
 body {
@@ -21,15 +26,16 @@ body {
 }
 
 .background-glow {
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: -200px;
     left: 50%;
     transform: translateX(-50%);
-    width: 800px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, rgba(17, 16, 21, 0) 70%);
+    width: 1000px;
+    height: 800px;
+    background: var(--glow-gradient);
     z-index: -1;
     pointer-events: none;
+    transition: background 0.3s ease;
 }
 
 .container {
@@ -70,6 +76,7 @@ header {
     z-index: 10;
     background: rgba(17, 16, 21, 0.8);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--color-border);
 }
 
@@ -122,15 +129,15 @@ nav {
 .gradient-text {
     background: linear-gradient(90deg, var(--color-primary-accent), var(--color-secondary-accent));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
 }
 
 .tagline {
     font-size: 1.25rem;
     color: var(--color-text-muted);
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto 2.5rem;
 }
 
@@ -145,7 +152,7 @@ nav {
     padding: 0.8rem 1.75rem;
     border-radius: 50px;
     font-weight: 600;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     border: none;
     cursor: pointer;
     display: inline-flex;
@@ -160,8 +167,8 @@ nav {
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 25px rgba(138, 43, 226, 0.4);
 }
 
 .btn-secondary {
@@ -173,15 +180,22 @@ nav {
 .btn-secondary:hover {
     background-color: var(--color-border);
     color: #FFFFFF;
+    transform: translateY(-3px);
 }
 
 .stats-bar {
     display: flex;
     justify-content: center;
-    gap: 4rem;
+    gap: 2rem;
+    flex-wrap: wrap;
     margin-top: 6rem;
     padding-top: 2rem;
     border-top: 1px solid var(--color-border);
+}
+
+.stat {
+    text-align: center;
+    padding: 0 1rem;
 }
 
 .stat-value {
@@ -198,18 +212,44 @@ nav {
 .card {
     background: var(--color-card-bg);
     border: 1px solid var(--color-border);
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 2rem;
     margin-top: 2rem;
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 16px;
+    border: 2px solid transparent;
+    background: linear-gradient(120deg, var(--color-primary-accent), var(--color-secondary-accent)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+    opacity: 0.5;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.2);
 }
+
 
 .grid-layout {
     display: grid;
@@ -270,6 +310,8 @@ pre {
     margin: 0;
     overflow-x: auto;
     font-size: 0.9rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 code { font-family: "SF Mono", "Menlo", "Monaco", monospace; }
 code .keyword { color: #c678dd; }
@@ -277,6 +319,62 @@ code .string { color: #98c379; }
 code .comment { color: #5c6370; }
 code .key { color: #61afef; }
 code .number { color: #d19a66; }
+
+/* --- 数据剖析新样式 --- */
+#data-anatomy-viewer {
+    position: relative;
+}
+.sample-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.sample-domain {
+    background-color: var(--color-primary-accent);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.sample-nav {
+    display: flex;
+    gap: 0.5rem;
+}
+.sample-nav-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sample-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+.sample-display-box {
+    background: rgba(0,0,0,0.2);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    min-height: 100px;
+}
+.sample-display-box h3 {
+    margin-top: 0;
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.katex { font-size: 1.1em; }
 
 /* --- 排行榜 --- */
 #leaderboard {
@@ -287,15 +385,28 @@ code .number { color: #d19a66; }
     color: var(--color-text-muted);
     text-align: center;
     max-width: 700px;
+    margin: 0 auto 1rem;
+}
+.eval-info {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    max-width: 800px;
     margin: 0 auto 2rem;
+    padding: 1rem;
+    background: rgba(0,0,0,0.15);
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
 }
 .leaderboard-container {
     padding: 0;
 }
 .leaderboard-tabs {
     display: flex;
+    justify-content: center;
     padding: 1rem 2rem 0;
     border-bottom: 1px solid var(--color-border);
+    flex-wrap: wrap;
 }
 .tab-btn {
     background: none;
@@ -320,11 +431,19 @@ code .number { color: #d19a66; }
     height: 2px;
     background: var(--color-primary-accent);
 }
-
+.leaderboard-content {
+    display: none;
+}
+.leaderboard-content.active {
+    display: block;
+}
+.chart-container {
+    padding: 2rem;
+    height: 450px; /* Give a fixed height for better layout */
+}
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1rem;
 }
 th, td {
     padding: 1rem 2rem;
@@ -339,6 +458,9 @@ th {
 }
 tbody tr {
     transition: background-color 0.2s ease;
+}
+tbody tr:last-child td {
+    border-bottom: none;
 }
 tbody tr:hover {
     background-color: rgba(255, 255, 255, 0.03);
