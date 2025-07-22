@@ -131,13 +131,35 @@
         /* --- Hero Section --- */
         #hero {
             text-align: center;
-            padding: 8rem 0;
+            padding: 6rem 0 8rem;
+        }
+        
+        .pre-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin: 0 0 1.5rem 0;
+            letter-spacing: 0.01em;
+            color: var(--color-text);
+        }
+
+        .pre-title strong {
+            font-weight: 800;
+        }
+
+        .gradient-text-sub {
+            background: linear-gradient(90deg, var(--color-primary-accent), var(--color-secondary-accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-fill-color: transparent;
+            display: inline-block;
         }
 
         .hero-title {
             font-size: 4.5rem;
             font-weight: 900;
             line-height: 1.1;
+            margin-top: 0;
             margin-bottom: 1.5rem;
             letter-spacing: -0.04em;
         }
@@ -525,7 +547,11 @@
 
     <main class="container">
         <section id="hero">
+
             <h1 class="hero-title">重新定义<br><span class="gradient-text">前沿科学推理</span>的边界</h1>
+            <h1 class="pre-title">
+                 <span class="gradient-text-sub"><strong>SAGE</strong> : <strong>S</strong>cientific <strong>A</strong>dvanced <strong>G</strong>eneral <strong>E</strong>valuation</span>
+            </h1>
             <p class="tagline">一个高难度、跨学科的前沿科学推理基准，旨在为通往通用人工智能的进程提供一把可靠的“标尺”。</p>
             <div class="cta-buttons">
                 <a href="https://huggingface.co/datasets/opencompass/SAGE" class="btn btn-primary" target="_blank">
@@ -548,14 +574,20 @@
                     <div class="stat-label">知名高校与研究机构合作贡献</div>
                 </div>
             </div>
+
         </section>
 
+        <div class="stat">
+            <object data="nested_pie_chart_sage_style.svg" type="image/svg+xml" width="800" height="800">
+                <p>您的浏览器不支持 SVG，请升级！</p>
+            </object>
+        </div>
         <section id="intro" class="card">
             <h2>介绍</h2>
             <p>随着大型语言模型（LLM）的快速发展，它们在许多现有基准上已表现出饱和性能，这使得我们难以有效区分前沿模型的能力。同时，现有高难度基准往往存在学科领域狭窄、答案形式过于简化以及易受数据污染等问题。为应对这些挑战，我们推出了SAGE (Scientific Advanced General Evaluation)，一个旨在推动领域向前发展的全新评估套件。</p>
             <ul>
                 <li><strong>高度原创与抗污染：</strong> 所有问题均为全新创建或经过大幅改编，以防止测试数据泄露。我们通过创新的、多阶段的数据生成和验证流程确保问题的质量。</li>
-                <li><strong>跨学科焦点：</strong> SAGE横跨数学、物理、化学、生物、计算机科学、地球科学和材料科学七大核心领域，旨在评估模型整合知识和跨域推理的能力。</li>
+                <li><strong>跨学科焦点：</strong> SAGE 横跨数学、物理、化学、生物、计算机科学、地球科学和材料科学七大核心领域，旨在评估模型整合知识和跨域推理的能力。</li>
                 <li><strong>高保真答案：</strong> 我们优先考虑复杂的、开放式的答案，这些答案涉及多步推理和LaTeX格式的表达式，而不是简单的多项选择，以更真实地反映科学探究。</li>
                 <li><strong>严格的质量控制：</strong> 所有问题均由博士及以上水平的领域专家手工创建，并经过多轮专家同行评审和对抗性测试，以确保其难度、科学价值和正确性。</li>
             </ul>
@@ -726,7 +758,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
         {
             domain: "生物",
-            question: "Background: In the innate immune system, RIG-I-like receptor (RLR) family proteins recognize viral RNA in the cytoplasm, triggering the downstream mitochondrial antiviral signaling protein (MAVS). MAVS acts as a signaling adapter, recruiting multiple proteins to form the MAVS signalosome, which activates transcription factors IRF3 and NF-$\kappa$B, inducing the expression of type I and type III interferons (IFNs) and other antiviral genes",
+            question: "Background: In the innate immune system, RIG-I-like receptor (RLR) family proteins recognize viral RNA in the cytoplasm, triggering the downstream mitochondrial antiviral signaling protein (MAVS). MAVS acts as a signaling adapter, recruiting multiple proteins to form the MAVS signalosome, which activates transcription factors IRF3 and NF-$\\kappa$B, inducing the expression of type I and type III interferons (IFNs) and other antiviral genes",
             answer: "1. Central disordered region\n2. 3'UTR (3' Untranslated Region)\n3. MAVS signalosome complex; phosphorylation level",
             organization: "School of Medicine, Shanghai Jiao Tong University"
         },
