@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAGE - 一个高难度、多学科的科学推理基准</title>
+    <title>ATLAS - 一个高难度、多学科的科学推理基准</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <!-- KaTeX for LaTeX rendering -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" xintegrity="sha384-n8MVd4RsNIU0KOVEMckDpbDM7jpXD0flLMSOnxYUQNcQvQFkFK6yc59dCzdYhwry" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" xintegrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" xintegrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0KOVEMckDpbDM7jpXD0flLMSOnxYUQNcQvQFkFK6yc59dCzdYhwry" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
     <!-- Chart.js for charts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -151,7 +151,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-fill-color: transparent;
+            color: transparent;
             display: inline-block;
         }
 
@@ -169,7 +169,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-fill-color: transparent;
+            color: transparent;
         }
 
         .tagline {
@@ -533,14 +533,14 @@
         <nav class="container">
             <div class="logo">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 7L12 12L22 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 12V22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>SAGE</span>
+                <span>ATLAS</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#intro">介绍</a></li>
                 <li><a href="#leaderboard">排行榜</a></li>
                 <li><a href="#usage">使用</a></li>
                 <li><a href="https://arxiv.org/abs/xxxx.xxxxx" target="_blank">论文</a></li>
-                <li><a href="https://github.com/your-org/your-repo" target="_blank">GitHub</a></li>
+                <li><a href="https://github.com/open-compass/ATLAS" target="_blank">GitHub</a></li>
             </ul>
         </nav>
     </header>
@@ -550,11 +550,11 @@
 
             <h1 class="hero-title">重新定义<br><span class="gradient-text">前沿科学推理</span>的边界</h1>
             <h1 class="pre-title">
-                 <span class="gradient-text-sub"><strong>SAGE</strong> : <strong>S</strong>cientific <strong>A</strong>dvanced <strong>G</strong>eneral <strong>E</strong>valuation</span>
+                 <span class="gradient-text-sub"><strong>ATLAS</strong> : <strong>S</strong>cientific <strong>A</strong>dvanced <strong>G</strong>eneral <strong>E</strong>valuation</span>
             </h1>
             <p class="tagline">一个高难度、跨学科的前沿科学推理基准，旨在为通往通用人工智能的进程提供一把可靠的“标尺”。</p>
             <div class="cta-buttons">
-                <a href="https://huggingface.co/datasets/opencompass/SAGE" class="btn btn-primary" target="_blank">
+                <a href="https://huggingface.co/datasets/opencompass/ATLAS" class="btn btn-primary" target="_blank">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10L12 15L17 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 15V3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     <span>访问数据集</span>
                 </a>
@@ -578,16 +578,17 @@
         </section>
 
         <div class="stat">
-            <object data="nested_pie_chart_sage_style.svg" type="image/svg+xml" width="800" height="800">
-                <p>您的浏览器不支持 SVG，请升级！</p>
+            <object data="ATLAS.png" type="image/png" width="800" height="800">
+                <!-- <p>您的浏览器不支持 SVG，请升级！</p> -->
             </object>
         </div>
+
         <section id="intro" class="card">
             <h2>介绍</h2>
-            <p>随着大型语言模型（LLM）的快速发展，它们在许多现有基准上已表现出饱和性能，这使得我们难以有效区分前沿模型的能力。同时，现有高难度基准往往存在学科领域狭窄、答案形式过于简化以及易受数据污染等问题。为应对这些挑战，我们推出了SAGE (Scientific Advanced General Evaluation)，一个旨在推动领域向前发展的全新评估套件。</p>
+            <p>随着大型语言模型（LLM）的快速发展，它们在许多现有基准上已表现出饱和性能，这使得我们难以有效区分前沿模型的能力。同时，现有高难度基准往往存在学科领域狭窄、答案形式过于简化以及易受数据污染等问题。为应对这些挑战，我们推出了ATLAS (AGI-Oriented Testbed for Logical Application in Science)，一个旨在推动领域向前发展的全新评估套件。</p>
             <ul>
                 <li><strong>高度原创与抗污染：</strong> 所有问题均为全新创建或经过大幅改编，以防止测试数据泄露。我们通过创新的、多阶段的数据生成和验证流程确保问题的质量。</li>
-                <li><strong>跨学科焦点：</strong> SAGE 横跨数学、物理、化学、生物、计算机科学、地球科学和材料科学七大核心领域，旨在评估模型整合知识和跨域推理的能力。</li>
+                <li><strong>跨学科焦点：</strong> ATLAS 横跨数学、物理、化学、生物、计算机科学、地球科学和材料科学七大核心领域，旨在评估模型整合知识和跨域推理的能力。</li>
                 <li><strong>高保真答案：</strong> 我们优先考虑复杂的、开放式的答案，这些答案涉及多步推理和LaTeX格式的表达式，而不是简单的多项选择，以更真实地反映科学探究。</li>
                 <li><strong>严格的质量控制：</strong> 所有问题均由博士及以上水平的领域专家手工创建，并经过多轮专家同行评审和对抗性测试，以确保其难度、科学价值和正确性。</li>
             </ul>
@@ -595,14 +596,14 @@
 
         <section id="leaderboard">
             <h2>排行榜</h2>
-            <p class="disclaimer">免责声明：此排行榜展示了各模型在SAGE验证集上的表现。我们强烈建议用户谨慎解读榜单结果，并结合模型的其他方面进行综合考量。</p>
+            <p class="disclaimer">免责声明：此排行榜展示了各模型在ATLAS验证集上的表现。我们强烈建议用户谨慎解读榜单结果，并结合模型的其他方面进行综合考量。</p>
             <p class="eval-info">
-                <b>关于榜单评估：</b>所有模型的结果均由 <b>OpenAI-o4-mini</b> 作为裁判模型进行评估得出。SAGE提供两个榜单：<b>公开集榜单</b>基于完全开放的数据集进行评测，任何人均可复现；<b>私有集榜单</b>则基于我们持有的、未公开的高难度测试集进行评测，旨在更真实地检验模型在前沿问题上的推理能力，并有效防止数据污染。
+                <b>关于榜单评估：</b>所有模型的结果均由 <b>OpenAI-o4-mini</b> 作为裁判模型进行评估得出。ATLAS提供两个榜单：<b>公开集榜单</b>基于完全开放的数据集进行评测，任何人均可复现；<b>私有集榜单</b>则基于我们持有的、未公开的高难度测试集进行评测，旨在更真实地检验模型在前沿问题上的推理能力，并有效防止数据污染。
             </p>
             <div class="leaderboard-container card">
                 <div class="leaderboard-tabs">
-                    <button class="tab-btn active" data-target="public">SAGE 公开集榜单</button>
-                    <button class="tab-btn" data-target="private">SAGE 私有集榜单</button>
+                    <button class="tab-btn active" data-target="public">ATLAS 公开集榜单</button>
+                    <button class="tab-btn" data-target="private">ATLAS 私有集榜单</button>
                 </div>
                 
                 <!-- 公开集榜单 -->
@@ -619,7 +620,6 @@
                             <tr><td>5</td><td><a href="#">Doubao-Seed-1.6-thinking</a></td><td>ByteDance</td><td><span class="tag api">API</span></td><td>25.3%</td><td>16.1%</td></tr>
                             <tr><td>6</td><td><a href="#">OpenAI o4-mini</a></td><td>OpenAI</td><td><span class="tag api">API</span></td><td>21.8%</td><td>12.0%</td></tr>
                             <tr><td>7</td><td><a href="#">Qwen3-235B-A22B</a></td><td>Alibaba Cloud</td><td><span class="tag open">Open</span></td><td>18.5%</td><td>9.6%</td></tr>
-
                         </tbody>
                     </table>
                     <div class="chart-container">
@@ -629,22 +629,22 @@
                 
                 <!-- 私有集榜单 -->
                 <div id="leaderboard-private" class="leaderboard-content">
-                     <table id="table-private">
+                    <table id="table-private">
                         <thead>
-                            <tr><th>排名</th><th>模型</th><th>机构</th><th>访问类型</th><th>准确率 (Avg)</th><th>mG-Pass@4</th></tr>
+                            <tr><th>排名</th><th>模型</th><th>机构</th><th>访问类型</th><th>准确率 (Avg)</th><th>mG-Pass@2</th><th>mG-Pass@4</th><th>Tokens</th></tr>
                         </thead>
-
-                            <tbody>
-                                <tr><td>1</td><td><a href="#">Gemini-2.5-Pro</a></td><td>Google</td><td><span class="tag api">API</span></td><td>39.1%</td><td>27.5%</td></tr>
-                                <tr><td>2</td><td><a href="#">OpenAI o3</a></td><td>OpenAI</td><td><span class="tag api">API</span></td><td>38.5%</td><td>24.2%</td></tr>
-                                <tr><td>3</td><td><a href="#">Grok-4</a></td><td>xAI</td><td><span class="tag api">API</span></td><td>35.0%</td><td>24.1%</td></tr>
-                                <tr><td>4</td><td><a href="#">Doubao-Seed-1.6-thinking</a></td><td>ByteDance</td><td><span class="tag api">API</span></td><td>27.7%</td><td>16.8%</td></tr>
-                                <tr><td>5</td><td><a href="#">DeepSeek-R1-0528</a></td><td>DeepSeek AI</td><td><span class="tag open">Open</span></td><td>26.1%</td><td>14.1%</td></tr>
-                                <tr><td>6</td><td><a href="#">OpenAI o4-mini</a></td><td>OpenAI</td><td><span class="tag api">API</span></td><td>23.5%</td><td>11.9%</td></tr>
-                                <tr><td>7</td><td><a href="#">Qwen3-235B-A22B</a></td><td>Alibaba Cloud</td><td><span class="tag open">Open</span></td><td>20.1%</td><td>9.6%</td></tr>
-                            </tbody>
-
-
+                        <tbody>
+                            <tr><td>1</td><td><a href="#">OpenAI GPT-5-High</a></td><td>OpenAI</td><td><span class="tag api">API</span></td><td>42.9%</td><td>34.7%</td><td>32.1%</td><td>32k</td></tr>
+                            <tr><td>2</td><td><a href="#">Gemini-2.5-Pro</a></td><td>Google</td><td><span class="tag api">API</span></td><td>35.3%</td><td>25.3%</td><td>23.4%</td><td>32k</td></tr>
+                            <tr><td>3</td><td><a href="#">Grok-4</a></td><td>xAI</td><td><span class="tag api">API</span></td><td>34.1%</td><td>25.8%</td><td>24.1%</td><td>32k</td></tr>
+                            <tr><td>4</td><td><a href="#">OpenAI o3-High</a></td><td>OpenAI</td><td><span class="tag api">API</span></td><td>33.8%</td><td>24.0%</td><td>22.3%</td><td>32k</td></tr>
+                            <tr><td>5</td><td><a href="#">DeepSeek-R1-0528</a></td><td>DeepSeek AI</td><td><span class="tag api">API</span></td><td>26.4%</td><td>16.1%</td><td>14.1%</td><td>32k</td></tr>
+                            <tr><td>6</td><td><a href="#">Qwen3-235B-A22B-2507</a></td><td>Alibaba Cloud</td><td><span class="tag open">Open</span></td><td>26.1%</td><td>18.4%</td><td>16.9%</td><td>32k</td></tr>
+                            <tr><td>7</td><td><a href="#">Doubao-Seed-1.6-thinking</a></td><td>ByteDance</td><td><span class="tag api">API</span></td><td>26.1%</td><td>18.1%</td><td>16.8%</td><td>32k</td></tr>
+                            <tr><td>8</td><td><a href="#">DeepSeek-V3.1</a></td><td>DeepSeek AI</td><td><span class="tag api">API</span></td><td>25.3%</td><td>16.3%</td><td>15.0%</td><td>32k</td></tr>
+                            <tr><td>9</td><td><a href="#">OpenAI o4-mini</a></td><td>OpenAI</td><td><span class="tag api">API</span></td><td>22.4%</td><td>15.1%</td><td>13.5%</td><td>32k</td></tr>
+                            <tr><td>10</td><td><a href="#">GPT-OSS-120B-High</a></td><td>OSS</td><td><span class="tag open">Open</span></td><td>21.7%</td><td>14.1%</td><td>12.8%</td><td>32k</td></tr>
+                        </tbody>
                     </table>
                     <div class="chart-container">
                         <canvas id="chart-private"></canvas>
@@ -660,8 +660,8 @@
                 <div class="sample-header">
                     <div id="sample-domain-display" class="sample-domain">物理</div>
                     <div class="sample-nav">
-                        <button id="prev-sample-btn" class="sample-nav-btn">&larr;</button>
-                        <button id="next-sample-btn" class="sample-nav-btn">&rarr;</button>
+                        <button id="prev-sample-btn" class="sample-nav-btn" aria-label="上一个样本">&larr;</button>
+                        <button id="next-sample-btn" class="sample-nav-btn" aria-label="下一个样本">&rarr;</button>
                     </div>
                 </div>
                 <div class="sample-display-box">
@@ -692,14 +692,14 @@
 
 <span class="comment"># 一行代码即可加载</span>
 dataset = load_dataset(
-<span class="string">"opencompass/SAGE"</span>
+<span class="string">"opencompass/ATLAS"</span>
 )</code></pre>
             </div>
-            <h3>评估脚本</h3>
-            <p>为保证结果的可比性，请使用我们的官方评估脚本。我们提出一个利用LLM作为评判者的可扩展评估流程。详细指南请见我们的 <a href="https://github.com/opencompass/SAGE" target="_blank">GitHub仓库</a>。</p>
+            <h3>评估脚本-公开验证集</h3>
+            <p>为保证结果的可比性，请使用我们的官方评估脚本。我们提出一个利用LLM作为评判者的可扩展评估流程。详细指南请见我们的 <a href="https://github.com/opencompass/ATLAS" target="_blank">GitHub仓库</a>。</p>
+            <h3>评估脚本-私有验证集</h3>
+            <p>我们在 <a href="https://huggingface.co/spaces/opencompass/ATLAS" target="_blank">提交地址</a>提供了私有验证集评测的入口。</p>
         </section>
-
-
         
         <div class="grid-layout">
             <section id="technical-details" class="card">
@@ -715,9 +715,9 @@ dataset = load_dataset(
                 <h3>如何引用</h3>
                 <p>如果您的研究使用了本数据集，请引用我们的论文：</p>
                 <div class="code-block-wrapper small">
-                    <pre><code>@inproceedings{sage2025,
-    title={SAGE: A High-Difficulty, Multidisciplinary Benchmark for Frontier Scientific Reasoning},
-    author={SAGE Team},
+                    <pre><code>@inproceedings{atlas2025,
+    title={ATLAS: A High-Difficulty, Multidisciplinary Benchmark for Frontier Scientific Reasoning},
+    author={ATLAS Team},
     year={2025}
 }</code></pre>
                 </div>
@@ -729,7 +729,7 @@ dataset = load_dataset(
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 SAGE Community. All Rights Reserved.</p>
+            <p>&copy; 2025 ATLAS Community. All Rights Reserved.</p>
             <p>由顶尖AI研究社区共同构建</p>
         </div>
     </footer>
@@ -834,10 +834,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for (let i = 1; i < table.rows.length; i++) {
             const row = table.rows[i];
+            // 检查是否有足够的列数，私有集榜单有8列，公开集榜单有6列
+            const hasMoreColumns = row.cells.length > 6;
             tableData.push({
                 label: row.cells[1].innerText,
                 accuracy: parseFloat(row.cells[4].innerText),
-                mgpass: parseFloat(row.cells[5].innerText)
+                mgpass: parseFloat(row.cells[hasMoreColumns ? 6 : 5].innerText) // 私有集用第6列，公开集用第5列
             });
         }
 
@@ -866,7 +868,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         borderWidth: 1
                     },
                     {
-                        label: 'mG-Pass@4',
+                        label: tableId === 'table-private' ? 'mG-Pass@4' : 'mG-Pass@4',
                         data: mgpassData,
                         backgroundColor: chartColor2,
                         borderColor: chartColor2Hover,
