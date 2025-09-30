@@ -176,6 +176,20 @@
             display: inline;
         }
 
+        /* --- SVG容器样式 --- */
+        .svg-container {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+        }
+
+        .svg-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+        }
+
         /* --- Hero Section --- */
         #hero {
             text-align: center;
@@ -660,10 +674,8 @@
 
         </section>
 
-        <div class="stat">
-            <object data="ATLAS.svg" type="image/svg+xml" width="800" height="800">
-                <!-- <p>您的浏览器不支持 SVG，请升级！</p> -->
-            </object>
+        <div class="svg-container">
+            <img src="ATLAS.svg" alt="ATLAS Logo" style="max-width: 100%; height: auto; width: 800px;">
         </div>
 
         <section id="intro" class="card">
