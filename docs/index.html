@@ -984,8 +984,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // 重新创建图表以更新标签语言
         if (typeof createChart === 'function') {
-            createChart('chart-public', 'table-public');
-            createChart('chart-private', 'table-private');
+            setTimeout(() => {
+                createChart('chart-public', 'table-public');
+                createChart('chart-private', 'table-private');
+            }, 100);
         }
     }
     
@@ -1046,13 +1048,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('next-sample-btn');
 
     function renderSample(index) {
-        const sample = samples[index];
-        const currentLang = document.querySelector('.lang-btn.active').dataset.lang;
+        if (!samples || !samples[index]) {
+            console.error('Sample data not available');
+            return;
+        }
         
-        questionEl.textContent = sample.question;
-        answerEl.textContent = sample.answer;
-        organizationEl.textContent = sample.organization;
-        domainEl.textContent = sample.domain[currentLang] || sample.domain.zh;
+        const sample = samples[index];
+        const currentLangBtn = document.querySelector('.lang-btn.active');
+        const currentLang = currentLangBtn ? currentLangBtn.dataset.lang : 'zh';
+        
+        if (questionEl) questionEl.textContent = sample.question;
+        if (answerEl) answerEl.textContent = sample.answer;
+        if (organizationEl) organizationEl.textContent = sample.organization;
+        if (domainEl) domainEl.textContent = sample.domain[currentLang] || sample.domain.zh;
         
         // Re-render LaTeX
         if (window.renderMathInElement) {
@@ -1079,7 +1087,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initial render
-    renderSample(currentSampleIndex);
+    setTimeout(() => {
+        renderSample(currentSampleIndex);
+    }, 100);
 
     // --- 排行榜模块 (Leaderboard Module) ---
     const tabs = document.querySelectorAll('.tab-btn');
@@ -1087,6 +1097,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const charts = {};
 
     function createChart(canvasId, tableId) {
+        const table = document.getElementById(tableId);
+        const canvas = document.getElementById(canvasId);
+        
+        if (!table || !canvas) {
+            console.error(`Table ${tableId} or Canvas ${canvasId} not found`);
+            return;
+        }
+        
         // Resolve CSS variables to actual colors
         const computedStyles = getComputedStyle(document.documentElement);
         const chartColor1 = computedStyles.getPropertyValue('--chart-color-1').trim();
@@ -1097,18 +1115,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const textColor = computedStyles.getPropertyValue('--color-text').trim();
         const borderColor = computedStyles.getPropertyValue('--color-border').trim();
 
-
-        const table = document.getElementById(tableId);
         let tableData = [];
 
         for (let i = 1; i < table.rows.length; i++) {
             const row = table.rows[i];
-            // 现在两个表格都有8列，mG-Pass@4都在第6列（索引6）
-            tableData.push({
-                label: row.cells[1].innerText,
-                accuracy: parseFloat(row.cells[4].innerText),
-                mgpass: parseFloat(row.cells[6].innerText) // mG-Pass@4 在第6列
-            });
+            if (row.cells.length >= 7) {
+                // 现在两个表格都有8列，mG-Pass@4都在第6列（索引6）
+                tableData.push({
+                    label: row.cells[1].innerText,
+                    accuracy: parseFloat(row.cells[4].innerText),
+                    mgpass: parseFloat(row.cells[6].innerText) // mG-Pass@4 在第6列
+                });
+            }
         }
 
         tableData.sort((a, b) => a.accuracy - b.accuracy);
@@ -1196,8 +1214,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // Initial chart creation
-    createChart('chart-public', 'table-public');
-    createChart('chart-private', 'table-private');
+    setTimeout(() => {
+        createChart('chart-public', 'table-public');
+        createChart('chart-private', 'table-private');
+    }, 200);
 
 });
 </script>
