@@ -171,8 +171,14 @@
             display: inline;
         }
         
-        /* 确保span元素正确显示 */
-        span.lang-content.active {
+        /* 确保span和a元素正确显示 */
+        span.lang-content.active,
+        a.lang-content.active {
+            display: inline;
+        }
+
+        /* 确保按钮内的span元素正确显示 */
+        button span.lang-content.active {
             display: inline;
         }
 
@@ -1199,17 +1205,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const target = tab.dataset.target;
+        tab.addEventListener('click', (e) => {
+            // 确保获取按钮元素，即使点击的是内部的span
+            const button = e.currentTarget;
+            const target = button.dataset.target;
+
+            if (!target) return;
 
             tabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
+            button.classList.add('active');
 
             contents.forEach(content => {
                 content.classList.remove('active');
             });
 
-            document.getElementById(`leaderboard-${target}`).classList.add('active');
+            const targetLeaderboard = document.getElementById(`leaderboard-${target}`);
+            if (targetLeaderboard) {
+                targetLeaderboard.classList.add('active');
+            }
         });
     });
     
