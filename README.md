@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Dataset License: CC BY-NC-SA 4.0](https://img.shields.io/badge/Dataset%20License-CC%20BY--NC--SA%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Paper](https://img.shields.io/badge/Paper-arXiv-red.svg)](https://arxiv.org/abs/XXXX.XXXXX)
-[![Website](https://img.shields.io/badge/Website-ATLAS-green.svg)](https://liushz.github.io/SSS/)
+[![Website](https://img.shields.io/badge/Website-ATLAS-green.svg)](https://open-compass.github.io/ATLAS/)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-orange)](https://huggingface.co/datasets/opencompass/ATLAS)
 
 </div>
@@ -38,7 +38,7 @@ Latest results evaluated with **OpenAI-o4-mini** as judge (Public Validation Set
 
 > 📝 **Note**: Results show that even the most advanced models struggle with ATLAS, demonstrating its effectiveness as a frontier benchmark.
 
-For complete leaderboard and submission: [https://liushz.github.io/SSS/](https://liushz.github.io/SSS/)
+For complete leaderboard and submission: [https://open-compass.github.io/ATLAS/](https://open-compass.github.io/ATLAS/)
 
 ---
 
