@@ -1,5 +1,116 @@
 {
-  "last_updated": "",
-  "total_entries": 0,
-  "leaderboard": []
+  "last_updated": "2025-01-10T10:00:00",
+  "total_entries": 10,
+  "leaderboard": [
+    {
+      "rank": 1,
+      "model": "OpenAI GPT-5-High",
+      "organization": "OpenAI",
+      "access": "API",
+      "accuracy": 43.8,
+      "mg_pass_2": 34.2,
+      "mg_pass_4": 33.5,
+      "tokens": "32k",
+      "submitted_time": "2025-11-18"
+    },
+    {
+      "rank": 2,
+      "model": "Gemini-2.5-Pro",
+      "organization": "Google",
+      "access": "API",
+      "accuracy": 39.9,
+      "mg_pass_2": 30.6,
+      "mg_pass_4": 28.8,
+      "tokens": "32k",
+      "submitted_time": "2025-11-18"
+    },
+    {
+      "rank": 3,
+      "model": "OpenAI o3-High",
+      "organization": "OpenAI",
+      "access": "API",
+      "accuracy": 37.4,
+      "mg_pass_2": 25.9,
+      "mg_pass_4": 23.8,
+      "tokens": "32k",
+      "submitted_time": "2025-11-18"
+    },
+    {
+      "rank": 4,
+      "model": "Grok-4",
+      "organization": "xAI",
+      "access": "API",
+      "accuracy": 35.4,
+      "mg_pass_2": 26.2,
+      "mg_pass_4": 24.4,
+      "tokens": "32k",
+      "submitted_time": "2025-11-18"
+    },
+    {
+      "rank": 5,
+      "model": "Qwen3-235B-A22B-2507",
+      "organization": "Alibaba",
+      "access": "API",
+      "accuracy": 29.7,
+      "mg_pass_2": 21.6,
+      "mg_pass_4": 19.8,
+      "tokens": "32k",
+      "submitted_time": "2025-11-18"
+    },
+    {
+      "rank": 6,
+      "model": "DeepSeek-V3.1",
+      "organization": "DeepSeek",
+      "access": "API",
+      "accuracy": 29.5,
+      "mg_pass_2": 20.2,
+      "mg_pass_4": 18.5,
+      "tokens": "32k",
+      "submitted_time": "2025-11-18"
+    },
+    {
+      "rank": 7,
+      "model": "Doubao-Seed-1.6-thinking",
+      "organization": "ByteDance",
+      "access": "API",
+      "accuracy": 28.8,
+      "mg_pass_2": 20.1,
+      "mg_pass_4": 18.5,
+      "tokens": "32k",
+      "submitted_time": "2025-11-18"
+    },
+    {
+      "rank": 8,
+      "model": "DeepSeek-R1-0528",
+      "organization": "DeepSeek",
+      "access": "API",
+      "accuracy": 26.1,
+      "mg_pass_2": 18.4,
+      "mg_pass_4": 16.6,
+      "tokens": "32k",
+      "submitted_time": "2025-11-18"
+    },
+    {
+      "rank": 9,
+      "model": "OpenAI o4-mini",
+      "organization": "OpenAI",
+      "access": "API",
+      "accuracy": 24.1,
+      "mg_pass_2": 15.2,
+      "mg_pass_4": 13.6,
+      "tokens": "32k",
+      "submitted_time": "2025-11-18"
+    },
+    {
+      "rank": 10,
+      "model": "GPT-OSS-120B-High",
+      "organization": "OpenAI",
+      "access": "API",
+      "accuracy": 23.3,
+      "mg_pass_2": 14.6,
+      "mg_pass_4": 12.8,
+      "tokens": "32k",
+      "submitted_time": "2025-11-18"
+    }
+  ]
 }
