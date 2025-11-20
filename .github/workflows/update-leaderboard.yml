@@ -94,6 +94,8 @@ jobs:
       - name: Commit and push if changed
         if: steps.check_changes.outputs.changed == 'true'
         run: |
+          set +e  # 临时禁用错误自动退出
+          
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add docs/leaderboard_data.json
@@ -102,13 +104,28 @@ jobs:
           echo "📥 Fetching latest changes from remote..."
           git fetch origin main
           
-          echo "🔄 Rebasing on origin/main..."
-          git rebase origin/main
+          echo "🔄 Attempting to push..."
+          if ! git push origin main; then
+            echo "⚠️ Push rejected, trying rebase..."
+            
+            echo "🔄 Rebasing on origin/main..."
+            git rebase origin/main
+            
+            if [ $? -eq 0 ]; then
+              echo "📤 Pushing after rebase..."
+              git push origin main
+              echo "✅ Successfully pushed changes after rebase!"
+            else
+              echo "❌ Rebase failed, using force-with-lease..."
+              git rebase --abort || true
+              git push --force-with-lease origin main
+              echo "✅ Successfully force-pushed changes!"
+            fi
+          else
+            echo "✅ Successfully pushed changes!"
+          fi
           
-          echo "📤 Pushing changes..."
-          git push origin main
-          
-          echo "✅ Successfully pushed changes!"
+          set -e  # 重新启用错误自动退出
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
