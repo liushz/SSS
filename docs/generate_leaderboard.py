@@ -67,7 +67,7 @@ def generate_leaderboard_json():
                     "rank": idx,
                     "model": entry.get("model_name", "Unknown"),
                     "organization": entry.get("organization", "Unknown"),
-                    "access": entry.get("access_type", "API"),  # 从数据中读取访问类型
+                    "access": entry.get("access", "API"),  # 从 OSS 数据读取 access 字段
                     "accuracy": round(entry.get("accuracy", 0), 1),
                     "mg_pass_2": round(entry.get("mg_pass_2", 0), 1),
                     "mg_pass_4": round(entry.get("mg_pass_4", 0), 1),
