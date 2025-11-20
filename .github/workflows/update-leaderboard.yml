@@ -52,8 +52,18 @@ jobs:
       
       - name: Generate leaderboard data
         run: |
+          echo "📄 File content BEFORE generation:"
+          cat docs/leaderboard_data.json | head -20
+          echo ""
+          echo "🔄 Running generation script..."
           cd docs
           python3 generate_leaderboard.py
+          echo ""
+          echo "📄 File content AFTER generation:"
+          cat leaderboard_data.json | head -20
+          echo ""
+          echo "📊 File size:"
+          ls -lh leaderboard_data.json
         env:
           OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
           OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
@@ -63,7 +73,22 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          git diff --quiet docs/leaderboard_data.json || echo "changed=true" >> $GITHUB_OUTPUT
+          echo "📋 Checking for changes..."
+          echo "File before generation:"
+          cat docs/leaderboard_data.json | head -10
+          echo ""
+          echo "Git status:"
+          git status docs/leaderboard_data.json
+          echo ""
+          echo "Git diff output:"
+          git diff docs/leaderboard_data.json
+          echo ""
+          if git diff --quiet docs/leaderboard_data.json; then
+            echo "ℹ️ No changes detected"
+          else
+            echo "✅ Changes detected!"
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
       
       - name: Commit and push if changed
         if: steps.check_changes.outputs.changed == 'true'
