@@ -97,6 +97,11 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add docs/leaderboard_data.json
           git commit -m "🤖 Auto-update leaderboard data [skip ci]"
+          
+          # Pull latest changes and rebase
+          git pull --rebase origin main
+          
+          # Push changes
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
