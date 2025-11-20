@@ -98,11 +98,16 @@ jobs:
           git add docs/leaderboard_data.json
           git commit -m "🤖 Auto-update leaderboard data [skip ci]"
           
-          # Pull latest changes and rebase
-          git pull --rebase origin main
+          echo "📥 Fetching latest changes from remote..."
+          git fetch origin main
           
-          # Push changes
-          git push
+          echo "🔄 Rebasing on origin/main..."
+          git rebase origin/main
+          
+          echo "📤 Pushing changes..."
+          git push origin main
+          
+          echo "✅ Successfully pushed changes!"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
