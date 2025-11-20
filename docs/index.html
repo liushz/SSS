@@ -1125,6 +1125,67 @@ document.addEventListener('DOMContentLoaded', () => {
     const contents = document.querySelectorAll('.leaderboard-content');
     const charts = {};
 
+    // 从 OSS 加载私有集排行榜数据
+    async function loadPrivateLeaderboard() {
+        try {
+            const response = await fetch('leaderboard_data.json');
+            if (!response.ok) {
+                console.warn('Failed to load leaderboard data, using static data');
+                return false;
+            }
+            
+            const data = await response.json();
+            console.log(`📥 Loaded ${data.total_entries} leaderboard entries from OSS`);
+            
+            // 更新私有集表格
+            const tbody = document.querySelector('#table-private tbody');
+            if (!tbody) {
+                console.error('Private table tbody not found');
+                return false;
+            }
+            
+            // 清空现有数据
+            tbody.innerHTML = '';
+            
+            // 填充新数据
+            data.leaderboard.forEach(entry => {
+                const row = document.createElement('tr');
+                
+                // 判断访问类型的标签样式
+                const accessTag = entry.access === 'API' 
+                    ? '<span class="tag api">API</span>' 
+                    : '<span class="tag open">Open</span>';
+                
+                row.innerHTML = `
+                    <td>${entry.rank}</td>
+                    <td><a href="#">${entry.model}</a></td>
+                    <td>${entry.organization}</td>
+                    <td>${accessTag}</td>
+                    <td>${entry.accuracy}%</td>
+                    <td>${entry.mg_pass_2}%</td>
+                    <td>${entry.mg_pass_4}%</td>
+                    <td>${entry.tokens}</td>
+                `;
+                tbody.appendChild(row);
+            });
+            
+            // 重新创建图表
+            setTimeout(() => {
+                createChart('chart-private', 'table-private');
+            }, 100);
+            
+            console.log('✅ Private leaderboard updated successfully');
+            return true;
+            
+        } catch (error) {
+            console.error('❌ Error loading leaderboard data:', error);
+            return false;
+        }
+    }
+    
+    // 页面加载时自动加载排行榜数据
+    loadPrivateLeaderboard();
+
     function createChart(canvasId, tableId) {
         const table = document.getElementById(tableId);
         const canvas = document.getElementById(canvasId);

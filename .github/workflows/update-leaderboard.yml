@@ -1,0 +1,71 @@
+name: Update ATLAS Leaderboard
+
+on:
+  # 定时执行：每小时的第 5 分钟运行一次
+  schedule:
+    - cron: '5 * * * *'
+  
+  # 允许手动触发
+  workflow_dispatch:
+  
+  # 当 docs/generate_leaderboard.py 被修改时触发
+  push:
+    paths:
+      - 'docs/generate_leaderboard.py'
+      - '.github/workflows/update-leaderboard.yml'
+
+jobs:
+  update-leaderboard:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      
+      - name: Install dependencies
+        run: |
+          pip install oss2 loguru
+      
+      - name: Generate leaderboard data
+        run: |
+          cd docs
+          python3 generate_leaderboard.py
+        env:
+          OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+          OSS_REGION: ${{ secrets.OSS_REGION }}
+          OSS_BUCKET_NAME: ${{ secrets.OSS_BUCKET_NAME }}
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git diff --quiet docs/leaderboard_data.json || echo "changed=true" >> $GITHUB_OUTPUT
+      
+      - name: Commit and push if changed
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add docs/leaderboard_data.json
+          git commit -m "🤖 Auto-update leaderboard data [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Update status
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          echo "✅ Leaderboard data updated successfully at $(date)"
+      
+      - name: No changes
+        if: steps.check_changes.outputs.changed != 'true'
+        run: |
+          echo "ℹ️ No changes in leaderboard data"
+
