@@ -4,14 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ATLAS - A High-Difficulty, Multidisciplinary Scientific Reasoning Benchmark</title>
-    <title>ATLAS - A High-Difficulty, Multidisciplinary Scientific Reasoning Benchmark</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <!-- KaTeX for LaTeX rendering -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0KOVEMckDpbDM7jpXD0flLMSOnxYUQNcQvQFkFK6yc59dCzdYhwry" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0KOVEMckDpbDM7jpXD0flLMSOnxYUQNcQvQFkFK6yc59dCzdYhwry" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
@@ -227,101 +223,6 @@
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
         }
 
-        /* --- 语言切换按钮 --- */
-        .language-switcher {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-        }
-
-        .lang-btn {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid var(--color-border);
-            color: var(--color-text-muted);
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.2s ease;
-        }
-
-        .lang-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            color: var(--color-text);
-        }
-
-        .lang-btn.active {
-            background: var(--color-primary-accent);
-            color: #FFFFFF;
-            border-color: var(--color-primary-accent);
-        }
-
-        /* --- 多语言内容隐藏 --- */
-        .lang-content {
-            display: none !important;
-        }
-
-        /* 块级元素（div等）显示为block */
-        div.lang-content.active {
-            display: block !important;
-        }
-
-        /* 内联元素（span, a等）显示为inline */
-        span.lang-content.active,
-        a.lang-content.active {
-            display: inline !important;
-        }
-
-        /* 按钮内的span元素 */
-        button span.lang-content.active {
-            display: inline !important;
-        }
-
-        /* 确保所有链接都可以点击 */
-        a {
-            pointer-events: auto !important;
-            cursor: pointer !important;
-            position: relative !important;
-            z-index: 10 !important;
-        }
-        
-        /* 确保lang-content内部的所有元素都可交互 */
-        .lang-content.active * {
-            pointer-events: auto !important;
-        }
-        
-        /* 特别确保lang-content内的链接可点击 */
-        .lang-content a,
-        .lang-content.active a {
-            pointer-events: auto !important;
-            cursor: pointer !important;
-            position: relative !important;
-            z-index: 10 !important;
-        }
-        
-        /* 确保card内的链接可点击 */
-        .card a {
-            pointer-events: auto !important;
-            cursor: pointer !important;
-            position: relative !important;
-            z-index: 10 !important;
-        }
-
-        /* --- SVG容器样式 --- */
-        .svg-container {
-            text-align: center;
-            margin: 3rem 0;
-            padding: 2rem;
-        }
-
-        .svg-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-        }
-
         /* --- Hero Section --- */
         #hero {
             text-align: center;
@@ -346,7 +247,6 @@
             background-clip: text;
             -webkit-text-fill-color: transparent;
             color: transparent;
-            color: transparent;
             display: inline-block;
         }
 
@@ -364,7 +264,6 @@
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            color: transparent;
             color: transparent;
         }
 
@@ -473,7 +372,6 @@
             mask-composite: exclude;
             opacity: 0;
             transition: opacity 0.3s ease;
-            pointer-events: none;
             pointer-events: none;
         }
 
@@ -732,7 +630,6 @@
             <div class="logo">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 7L12 12L22 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 12V22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span>ATLAS</span>
-                <span>ATLAS</span>
             </div>
             <ul class="nav-links">
                 <li>
@@ -748,15 +645,11 @@
                     <a href="#usage" class="lang-content en">Usage</a>
                 </li>
                 <li>
-                    <a href="https://arxiv.org/abs/xxxx.xxxxx" target="_blank" class="lang-content zh active">论文</a>
-                    <a href="https://arxiv.org/abs/xxxx.xxxxx" target="_blank" class="lang-content en">Paper</a>
+                    <a href="https://arxiv.org/abs/2511.14366" target="_blank" class="lang-content zh active">论文</a>
+                    <a href="https://arxiv.org/abs/2511.14366" target="_blank" class="lang-content en">Paper</a>
                 </li>
                 <li><a href="https://github.com/open-compass/ATLAS" target="_blank">GitHub</a></li>
             </ul>
-            <div class="language-switcher">
-                <button class="lang-btn active" data-lang="zh">中文</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-            </div>
             <div class="language-switcher">
                 <button class="lang-btn active" data-lang="zh">中文</button>
                 <button class="lang-btn" data-lang="en">EN</button>
@@ -771,7 +664,7 @@
             <div class="lang-content zh active">
                 <h1 class="hero-title">重新定义<br><span class="gradient-text">前沿科学推理</span>的边界</h1>
                 <h1 class="pre-title">
-                     <span class="gradient-text-sub"><strong>ATLAS</strong> : <strong>S</strong>cientific <strong>A</strong>dvanced <strong>G</strong>eneral <strong>E</strong>valuation</span>
+                     <span class="gradient-text-sub"><strong>ATLAS</strong> : <strong>A</strong>GI-Oriented  <strong>T</strong>estbed for <strong>L</strong>ogical <strong>A</strong>pplication in <strong>S</strong>cience</span>
                 </h1>
                 <p class="tagline">一个高难度、跨学科的前沿科学推理基准，旨在为通往通用人工智能的进程提供一把可靠的"标尺"。</p>
             </div>
@@ -780,22 +673,15 @@
             <div class="lang-content en">
                 <h1 class="hero-title">Redefining the Boundaries of<br><span class="gradient-text">Frontier Scientific Reasoning</span></h1>
                 <h1 class="pre-title">
-                     <span class="gradient-text-sub"><strong>ATLAS</strong> : <strong>S</strong>cientific <strong>A</strong>dvanced <strong>G</strong>eneral <strong>E</strong>valuation</span>
+                    <span class="gradient-text-sub"><strong>ATLAS</strong> : <strong>A</strong>GI-Oriented  <strong>T</strong>estbed for <strong>L</strong>ogical <strong>A</strong>pplication in <strong>S</strong>cience</span>
                 </h1>
                 <p class="tagline">A high-difficulty, cross-disciplinary frontier scientific reasoning benchmark designed to provide a reliable "measuring stick" for the progress towards Artificial General Intelligence.</p>
             </div>
             <div class="cta-buttons">
                 <a href="https://huggingface.co/datasets/opencompass/ATLAS" class="btn btn-primary" target="_blank">
-                <a href="https://huggingface.co/datasets/opencompass/ATLAS" class="btn btn-primary" target="_blank">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10L12 15L17 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 15V3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     <span class="lang-content zh active">访问数据集</span>
                     <span class="lang-content en">Access Dataset</span>
-                    <span class="lang-content zh active">访问数据集</span>
-                    <span class="lang-content en">Access Dataset</span>
-                </a>
-                <a href="#leaderboard" class="btn btn-secondary">
-                    <span class="lang-content zh active">查看排行榜</span>
-                    <span class="lang-content en">View Leaderboard</span>
                 </a>
                 <a href="#leaderboard" class="btn btn-secondary">
                     <span class="lang-content zh active">查看排行榜</span>
@@ -807,20 +693,14 @@
                     <div class="stat-value">800+</div>
                     <div class="stat-label lang-content zh active">原创高质量问题</div>
                     <div class="stat-label lang-content en">Original High-Quality Questions</div>
-                    <div class="stat-label lang-content zh active">原创高质量问题</div>
-                    <div class="stat-label lang-content en">Original High-Quality Questions</div>
                 </div>
                 <div class="stat">
                     <div class="stat-value">7</div>
                     <div class="stat-label lang-content zh active">个核心科学领域</div>
                     <div class="stat-label lang-content en">Core Scientific Domains</div>
-                    <div class="stat-label lang-content zh active">个核心科学领域</div>
-                    <div class="stat-label lang-content en">Core Scientific Domains</div>
                 </div>
                 <div class="stat">
                     <div class="stat-value">25+</div>
-                    <div class="stat-label lang-content zh active">知名高校与研究机构合作贡献</div>
-                    <div class="stat-label lang-content en">Leading Universities & Research Institutions</div>
                     <div class="stat-label lang-content zh active">知名高校与研究机构合作贡献</div>
                     <div class="stat-label lang-content en">Leading Universities & Research Institutions</div>
                 </div>
@@ -830,35 +710,9 @@
 
         <div class="svg-container">
             <img src="ATLAS.svg" alt="ATLAS Logo" style="max-width: 100%; height: auto; width: 800px;">
-        <div class="svg-container">
-            <img src="ATLAS.svg" alt="ATLAS Logo" style="max-width: 100%; height: auto; width: 800px;">
         </div>
 
-
         <section id="intro" class="card">
-            <!-- 中文版本 -->
-            <div class="lang-content zh active">
-                <h2>介绍</h2>
-                <p>随着大型语言模型（LLM）的快速发展，它们在许多现有基准上已表现出饱和性能，这使得我们难以有效区分前沿模型的能力。同时，现有高难度基准往往存在学科领域狭窄、答案形式过于简化以及易受数据污染等问题。为应对这些挑战，我们推出了ATLAS (AGI-Oriented Testbed for Logical Application in Science)，一个旨在推动领域向前发展的全新评估套件。</p>
-                <ul>
-                    <li><strong>高度原创与抗污染：</strong> 所有问题均为全新创建或经过大幅改编，以防止测试数据泄露。我们通过创新的、多阶段的数据生成和验证流程确保问题的质量。</li>
-                    <li><strong>跨学科焦点：</strong> ATLAS 横跨数学、物理、化学、生物、计算机科学、地球科学和材料科学七大核心领域，旨在评估模型整合知识和跨域推理的能力。</li>
-                    <li><strong>高保真答案：</strong> 我们优先考虑复杂的、开放式的答案，这些答案涉及多步推理和LaTeX格式的表达式，而不是简单的多项选择，以更真实地反映科学探究。</li>
-                    <li><strong>严格的质量控制：</strong> 所有问题均由博士及以上水平的领域专家手工创建，并经过多轮专家同行评审和对抗性测试，以确保其难度、科学价值和正确性。</li>
-                </ul>
-            </div>
-
-            <!-- 英文版本 -->
-            <div class="lang-content en">
-                <h2>Introduction</h2>
-                <p>With the rapid development of Large Language Models (LLMs), they have demonstrated saturated performance on many existing benchmarks, making it difficult for us to effectively distinguish the capabilities of frontier models. Meanwhile, existing high-difficulty benchmarks often suffer from narrow disciplinary domains, oversimplified answer formats, and susceptibility to data contamination. To address these challenges, we introduce ATLAS (AGI-Oriented Testbed for Logical Application in Science), a novel evaluation suite designed to advance the field.</p>
-                <ul>
-                    <li><strong>Highly Original & Contamination-Resistant:</strong> All questions are newly created or significantly adapted to prevent test data leakage. We ensure question quality through innovative, multi-stage data generation and validation processes.</li>
-                    <li><strong>Cross-Disciplinary Focus:</strong> ATLAS spans seven core domains: mathematics, physics, chemistry, biology, computer science, earth science, and materials science, aiming to evaluate models' ability to integrate knowledge and perform cross-domain reasoning.</li>
-                    <li><strong>High-Fidelity Answers:</strong> We prioritize complex, open-ended answers involving multi-step reasoning and LaTeX-formatted expressions, rather than simple multiple choice, to more authentically reflect scientific inquiry.</li>
-                    <li><strong>Rigorous Quality Control:</strong> All questions are hand-crafted by domain experts at PhD level or above, and undergo multiple rounds of expert peer review and adversarial testing to ensure difficulty, scientific value, and correctness.</li>
-                </ul>
-            </div>
             <!-- 中文版本 -->
             <div class="lang-content zh active">
                 <h2>介绍</h2>
@@ -888,30 +742,20 @@
             <!-- 中文版本 -->
             <div class="lang-content zh active">
                 <h2>排行榜</h2>
-                <p class="disclaimer">免责声明：此排行榜展示了各模型在ATLAS验证集上的表现。我们强烈建议用户谨慎解读榜单结果，并结合模型的其他方面进行综合考量。</p>
                 <p class="eval-info">
-                    <b>关于榜单评估：</b>所有模型的结果均由 <b>OpenAI-o4-mini</b> 作为裁判模型进行评估得出。ATLAS提供两个榜单：<b>公开集榜单</b>基于完全开放的数据集进行评测，任何人均可复现；<b>私有集榜单</b>则基于我们持有的、未公开的高难度测试集进行评测，旨在更真实地检验模型在前沿问题上的推理能力，并有效防止数据污染。
+                    <b>关于榜单评估：</b>所有模型的结果均由 <b>OpenAI-o4-mini</b> (公开集) 或 <b>GPT-OSS-120B</b> (私有集) 作为评判模型进行评估得出。ATLAS提供两个榜单：<b>公开集榜单</b>基于完全开放的数据集进行评测，任何人均可复现；<b>私有集榜单</b>则基于我们持有的、未公开的高难度测试集进行评测，旨在更真实地检验模型在前沿问题上的推理能力，并有效防止数据污染。
                 </p>
             </div>
             
             <!-- 英文版本 -->
             <div class="lang-content en">
                 <h2>Leaderboard</h2>
-                <p class="disclaimer">Disclaimer: This leaderboard shows the performance of various models on the ATLAS validation set. We strongly recommend users interpret the results cautiously and consider other aspects of the models comprehensively.</p>
                 <p class="eval-info">
-                    <b>About Evaluation:</b> All model results are evaluated using <b>OpenAI-o4-mini</b> as the judge model. ATLAS provides two leaderboards: The <b>Public Set Leaderboard</b> is based on completely open datasets that anyone can reproduce; The <b>Private Set Leaderboard</b> is based on our unreleased high-difficulty test set, designed to more authentically test models' reasoning capabilities on frontier problems and effectively prevent data contamination.
+                    <b>About Evaluation:</b> All model results are evaluated using <b>OpenAI-o4-mini</b> (public set) or <b>GPT-OSS-120B</b> (private set) as the judge model. ATLAS provides two leaderboards: The <b>Public Set Leaderboard</b> is based on completely open datasets that anyone can reproduce; The <b>Private Set Leaderboard</b> is based on our unreleased high-difficulty test set, designed to more authentically test models' reasoning capabilities on frontier problems and effectively prevent data contamination.
                 </p>
             </div>
             <div class="leaderboard-container card">
                 <div class="leaderboard-tabs">
-                    <button class="tab-btn active" data-target="public">
-                        <span class="lang-content zh active">ATLAS 公开集榜单</span>
-                        <span class="lang-content en">ATLAS Public Set Leaderboard</span>
-                    </button>
-                    <button class="tab-btn" data-target="private">
-                        <span class="lang-content zh active">ATLAS 私有集榜单</span>
-                        <span class="lang-content en">ATLAS Private Set Leaderboard</span>
-                    </button>
                     <button class="tab-btn active" data-target="public">
                         <span class="lang-content zh active">ATLAS 公开集榜单</span>
                         <span class="lang-content en">ATLAS Public Set Leaderboard</span>
@@ -936,28 +780,9 @@
                                 <th>mG-Pass@4</th>
                                 <th>Tokens</th>
                             </tr>
-                            <tr>
-                                <th><span class="lang-content zh active">排名</span><span class="lang-content en">Rank</span></th>
-                                <th><span class="lang-content zh active">模型</span><span class="lang-content en">Model</span></th>
-                                <th><span class="lang-content zh active">机构</span><span class="lang-content en">Organization</span></th>
-                                <th><span class="lang-content zh active">访问类型</span><span class="lang-content en">Access</span></th>
-                                <th><span class="lang-content zh active">准确率 (Avg)</span><span class="lang-content en">Accuracy (Avg)</span></th>
-                                <th>mG-Pass@2</th>
-                                <th>mG-Pass@4</th>
-                                <th>Tokens</th>
-                            </tr>
                         </thead>
                         <tbody>
-                            <tr><td>1</td><td><a href="#">OpenAI GPT-5-High</a></td><td>OpenAI</td><td><span class="tag api">API</span></td><td>42.9%</td><td>34.7%</td><td>32.1%</td><td>32k</td></tr>
-                            <tr><td>2</td><td><a href="#">Gemini-2.5-Pro</a></td><td>Google</td><td><span class="tag api">API</span></td><td>35.3%</td><td>25.3%</td><td>23.4%</td><td>32k</td></tr>
-                            <tr><td>3</td><td><a href="#">Grok-4</a></td><td>xAI</td><td><span class="tag api">API</span></td><td>34.1%</td><td>25.8%</td><td>24.1%</td><td>32k</td></tr>
-                            <tr><td>4</td><td><a href="#">OpenAI o3-High</a></td><td>OpenAI</td><td><span class="tag api">API</span></td><td>33.8%</td><td>24.0%</td><td>22.3%</td><td>32k</td></tr>
-                            <tr><td>5</td><td><a href="#">DeepSeek-R1-0528</a></td><td>DeepSeek AI</td><td><span class="tag api">API</span></td><td>26.4%</td><td>16.1%</td><td>14.1%</td><td>32k</td></tr>
-                            <tr><td>6</td><td><a href="#">Qwen3-235B-A22B-2507</a></td><td>Alibaba Cloud</td><td><span class="tag open">Open</span></td><td>26.1%</td><td>18.4%</td><td>16.9%</td><td>32k</td></tr>
-                            <tr><td>7</td><td><a href="#">Doubao-Seed-1.6-thinking</a></td><td>ByteDance</td><td><span class="tag api">API</span></td><td>26.1%</td><td>18.1%</td><td>16.8%</td><td>32k</td></tr>
-                            <tr><td>8</td><td><a href="#">DeepSeek-V3.1</a></td><td>DeepSeek AI</td><td><span class="tag api">API</span></td><td>25.3%</td><td>16.3%</td><td>15.0%</td><td>32k</td></tr>
-                            <tr><td>9</td><td><a href="#">OpenAI o4-mini</a></td><td>OpenAI</td><td><span class="tag api">API</span></td><td>22.4%</td><td>15.1%</td><td>13.5%</td><td>32k</td></tr>
-                            <tr><td>10</td><td><a href="#">GPT-OSS-120B-High</a></td><td>OSS</td><td><span class="tag open">Open</span></td><td>21.7%</td><td>14.1%</td><td>12.8%</td><td>32k</td></tr>
+                            <!-- 数据从远程加载 -->
                         </tbody>
                     </table>
                     <div class="chart-container">
@@ -967,7 +792,6 @@
                 
                 <!-- 私有集榜单 -->
                 <div id="leaderboard-private" class="leaderboard-content">
-                    <table id="table-private">
                     <table id="table-private">
                         <thead>
                             <tr>
@@ -980,28 +804,9 @@
                                 <th>mG-Pass@4</th>
                                 <th>Tokens</th>
                             </tr>
-                            <tr>
-                                <th><span class="lang-content zh active">排名</span><span class="lang-content en">Rank</span></th>
-                                <th><span class="lang-content zh active">模型</span><span class="lang-content en">Model</span></th>
-                                <th><span class="lang-content zh active">机构</span><span class="lang-content en">Organization</span></th>
-                                <th><span class="lang-content zh active">访问类型</span><span class="lang-content en">Access</span></th>
-                                <th><span class="lang-content zh active">准确率 (Avg)</span><span class="lang-content en">Accuracy (Avg)</span></th>
-                                <th>mG-Pass@2</th>
-                                <th>mG-Pass@4</th>
-                                <th>Tokens</th>
-                            </tr>
                         </thead>
                         <tbody>
-                            <tr><td>1</td><td><a href="#">OpenAI GPT-5-High</a></td><td>OpenAI</td><td><span class="tag api">API</span></td><td>43.8%</td><td>34.2%</td><td>33.5%</td><td>32k</td></tr>
-                            <tr><td>2</td><td><a href="#">Gemini-2.5-Pro</a></td><td>Google</td><td><span class="tag api">API</span></td><td>39.9%</td><td>30.6%</td><td>28.8%</td><td>32k</td></tr>
-                            <tr><td>3</td><td><a href="#">OpenAI o3-High</a></td><td>OpenAI</td><td><span class="tag api">API</span></td><td>37.4%</td><td>25.9%</td><td>23.8%</td><td>32k</td></tr>
-                            <tr><td>4</td><td><a href="#">Grok-4</a></td><td>xAI</td><td><span class="tag api">API</span></td><td>35.4%</td><td>26.2%</td><td>24.4%</td><td>32k</td></tr>
-                            <tr><td>5</td><td><a href="#">Qwen3-235B-A22B-2507</a></td><td>Alibaba Cloud</td><td><span class="tag open">Open</span></td><td>29.7%</td><td>21.6%</td><td>19.8%</td><td>32k</td></tr>
-                            <tr><td>6</td><td><a href="#">DeepSeek-V3.1</a></td><td>DeepSeek AI</td><td><span class="tag api">API</span></td><td>29.5%</td><td>20.2%</td><td>18.5%</td><td>32k</td></tr>
-                            <tr><td>7</td><td><a href="#">Doubao-Seed-1.6-thinking</a></td><td>ByteDance</td><td><span class="tag api">API</span></td><td>28.8%</td><td>20.1%</td><td>18.5%</td><td>32k</td></tr>
-                            <tr><td>8</td><td><a href="#">DeepSeek-R1-0528</a></td><td>DeepSeek AI</td><td><span class="tag api">API</span></td><td>26.1%</td><td>18.4%</td><td>16.6%</td><td>32k</td></tr>
-                            <tr><td>9</td><td><a href="#">OpenAI o4-mini</a></td><td>OpenAI</td><td><span class="tag api">API</span></td><td>24.1%</td><td>15.2%</td><td>13.6%</td><td>32k</td></tr>
-                            <tr><td>10</td><td><a href="#">GPT-OSS-120B-High</a></td><td>OSS</td><td><span class="tag open">Open</span></td><td>23.3%</td><td>14.6%</td><td>12.8%</td><td>32k</td></tr>
+                            <!-- 数据从远程加载 -->
                         </tbody>
                     </table>
                     <div class="chart-container">
@@ -1015,14 +820,10 @@
         <section id="data-anatomy" class="card">
             <h2 class="lang-content zh active">数据剖析</h2>
             <h2 class="lang-content en">Data Anatomy</h2>
-            <h2 class="lang-content zh active">数据剖析</h2>
-            <h2 class="lang-content en">Data Anatomy</h2>
             <div id="data-anatomy-viewer">
                 <div class="sample-header">
                     <div id="sample-domain-display" class="sample-domain">物理</div>
                     <div class="sample-nav">
-                        <button id="prev-sample-btn" class="sample-nav-btn" aria-label="上一个样本">&larr;</button>
-                        <button id="next-sample-btn" class="sample-nav-btn" aria-label="下一个样本">&rarr;</button>
                         <button id="prev-sample-btn" class="sample-nav-btn" aria-label="上一个样本">&larr;</button>
                         <button id="next-sample-btn" class="sample-nav-btn" aria-label="下一个样本">&rarr;</button>
                     </div>
@@ -1055,17 +856,6 @@
                 <h2>Access & Usage</h2>
                 <p>We recommend using Hugging Face to load the data.</p>
             </div>
-            <!-- 中文版本 -->
-            <div class="lang-content zh active">
-                <h2>访问与使用</h2>
-                <p>我们推荐使用Hugging Face 来加载数据。</p>
-            </div>
-            
-            <!-- 英文版本 -->
-            <div class="lang-content en">
-                <h2>Access & Usage</h2>
-                <p>We recommend using Hugging Face to load the data.</p>
-            </div>
             <div class="code-block-wrapper">
                  <div class="code-block-header">
                     <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
@@ -1076,13 +866,12 @@
 <span class="comment"># 一行代码即可加载</span>
 dataset = load_dataset(
 <span class="string">"opencompass/ATLAS"</span>
-<span class="string">"opencompass/ATLAS"</span>
 )</code></pre>
             </div>
             <!-- 中文版本 -->
             <div class="lang-content zh active">
                 <h3>评估脚本-公开验证集</h3>
-                <p>为保证结果的可比性，请使用我们的官方评估脚本。我们提出一个利用LLM作为评判者的可扩展评估流程。详细指南请见我们的 <a href="https://github.com/opencompass/ATLAS" target="_blank">GitHub仓库</a>。</p>
+                <p>为保证结果的可比性，请使用我们的官方评估脚本。我们提出一个利用LLM作为评判者的可扩展评估流程。详细指南请见我们的 <a href="https://github.com/open-compass/ATLAS" target="_blank">GitHub仓库</a>。</p>
                 <h3>评估脚本-私有验证集</h3>
                 <p>我们在 <a href="https://huggingface.co/spaces/opencompass/ATLAS" target="_blank">提交地址</a>提供了私有验证集评测的入口。</p>
             </div>
@@ -1090,7 +879,7 @@ dataset = load_dataset(
             <!-- 英文版本 -->
             <div class="lang-content en">
                 <h3>Evaluation Scripts - Public Validation Set</h3>
-                <p>To ensure result comparability, please use our official evaluation scripts. We propose a scalable evaluation pipeline using LLMs as judges. For detailed guidelines, please refer to our <a href="https://github.com/opencompass/ATLAS" target="_blank">GitHub repository</a>.</p>
+                <p>To ensure result comparability, please use our official evaluation scripts. We propose a scalable evaluation pipeline using LLMs as judges. For detailed guidelines, please refer to our <a href="https://github.com/open-compass/ATLAS" target="_blank">GitHub repository</a>.</p>
                 <h3>Evaluation Scripts - Private Validation Set</h3>
                 <p>We provide an entry for private validation set evaluation at our <a href="https://huggingface.co/spaces/opencompass/ATLAS" target="_blank">submission portal</a>.</p>
             </div>
@@ -1101,8 +890,6 @@ dataset = load_dataset(
                 <!-- 中文版本 -->
                 <div class="lang-content zh active">
                     <h2>技术与治理</h2>
-                    <h3>防污染机制</h3>
-                    <p>为维护基准的长期有效性，我们的测试集完全保密，并在所有公开数据中嵌入了唯一的"金丝雀"字符串（例如：<code>guid:your-unique-canary-string-here</code>）以检测潜在的数据污染。</p>
                     <h3>许可证</h3>
                     <p>本项目代码遵循 <a href="#">MIT 许可证</a>，数据集内容遵循 <a href="#">CC BY-NC-SA 4.0</a> 国际许可协议。我们的目标是建立一个可持续的评估平台，以长期动态地追踪通往通用人工智能（AGI）的进展。</p>
                 </div>
@@ -1110,8 +897,6 @@ dataset = load_dataset(
                 <!-- 英文版本 -->
                 <div class="lang-content en">
                     <h2>Technology & Governance</h2>
-                    <h3>Anti-Contamination Mechanism</h3>
-                    <p>To maintain the long-term validity of the benchmark, our test set is completely confidential, and unique "canary" strings (e.g., <code>guid:your-unique-canary-string-here</code>) are embedded in all public data to detect potential data contamination.</p>
                     <h3>License</h3>
                     <p>This project code follows the <a href="#">MIT License</a>, and the dataset content follows the <a href="#">CC BY-NC-SA 4.0</a> International License Agreement. Our goal is to establish a sustainable evaluation platform to dynamically track progress towards Artificial General Intelligence (AGI) over the long term.</p>
                 </div>
@@ -1128,15 +913,6 @@ dataset = load_dataset(
     title={ATLAS: A High-Difficulty, Multidisciplinary Benchmark for Frontier Scientific Reasoning},
     author={Liu, Hongwei and Liu, Junnan and Liu, Shudong and Duan, Haodong and Li, Yuqiang and Su, Mao and Liu, Xiaohong and Zhai, Guangtao and Fang, Xinyu and Ma, Qianhong and Zhang, Taolin and Ma, Zihan and Zhao, Yufeng and Zhou, Peiheng and Xiao, Linchen and Zhang, Wenlong and Zhou, Shijie and Ma, Xingjian and Sun, Siqi and Ge, Jiaye and Li, Meng and Liu, Yuhong and Dong, Jianxin and Li, Jiaying and Wu, Hui and Liang, Hanwen and Lin, Jintai and Wang, Yanting and Dong, Jie and Zhu, Tong and Fu, Tianfan and He, Conghui and Zhang, Qi and Zhang, Songyang and Bai, Lei and Chen, Kai},
     journal={arXiv preprint arXiv:2511.14366},
-                <!-- 中文版本 -->
-                <div class="lang-content zh active">
-                    <h2>引用与社区</h2>
-                    <h3>如何引用</h3>
-                    <p>如果您的研究使用了本数据集，请引用我们的论文：</p>
-                    <div class="code-block-wrapper small">
-                        <pre><code>@inproceedings{atlas2025,
-    title={ATLAS: A High-Difficulty, Multidisciplinary Benchmark for Frontier Scientific Reasoning},
-    author={ATLAS Team},
     year={2025}
     }</code></pre>
                     </div>
@@ -1160,27 +936,6 @@ dataset = load_dataset(
                     <h3>Contact Us</h3>
                     <p>For any questions or contributions, please contact <a href="mailto:opencompass@pjlab.org.cn">opencompass@pjlab.org.cn</a>.</p>
                 </div>
-}</code></pre>
-                    </div>
-                    <h3>联系我们</h3>
-                    <p>如有任何问题或希望贡献，请联系 <a href="mailto:contact@opencompass.org">contact@opencompass.org</a>。</p>
-                </div>
-                
-                <!-- 英文版本 -->
-                <div class="lang-content en">
-                    <h2>Citation & Community</h2>
-                    <h3>How to Cite</h3>
-                    <p>If your research uses this dataset, please cite our paper:</p>
-                    <div class="code-block-wrapper small">
-                        <pre><code>@inproceedings{atlas2025,
-    title={ATLAS: A High-Difficulty, Multidisciplinary Benchmark for Frontier Scientific Reasoning},
-    author={ATLAS Team},
-    year={2025}
-}</code></pre>
-                    </div>
-                    <h3>Contact Us</h3>
-                    <p>For any questions or contributions, please contact <a href="mailto:contact@opencompass.org">contact@opencompass.org</a>.</p>
-                </div>
             </section>
         </div>
     </main>
@@ -1190,73 +945,11 @@ dataset = load_dataset(
             <p>&copy; 2025 ATLAS Community. All Rights Reserved.</p>
             <p class="lang-content zh active">由顶尖AI研究社区共同构建</p>
             <p class="lang-content en">Built by the Top AI Research Community</p>
-            <p>&copy; 2025 ATLAS Community. All Rights Reserved.</p>
-            <p class="lang-content zh active">由顶尖AI研究社区共同构建</p>
-            <p class="lang-content en">Built by the Top AI Research Community</p>
         </div>
     </footer>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 语言切换功能 (Language Switching Functionality) ---
-    const langButtons = document.querySelectorAll('.lang-btn');
-    const langContents = document.querySelectorAll('.lang-content');
-    
-    function switchLanguage(targetLang) {
-        // 更新按钮状态
-        langButtons.forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.lang === targetLang);
-        });
-        
-        // 更新内容显示
-        langContents.forEach(content => {
-            if (content.classList.contains(targetLang)) {
-                content.classList.add('active');
-            } else {
-                content.classList.remove('active');
-            }
-        });
-        
-        // 更新页面语言属性
-        document.documentElement.lang = targetLang === 'zh' ? 'zh-CN' : 'en';
-        
-        // 更新页面标题
-        if (targetLang === 'zh') {
-            document.title = 'ATLAS - 一个高难度、多学科的科学推理基准';
-        } else {
-            document.title = 'ATLAS - A High-Difficulty, Multidisciplinary Scientific Reasoning Benchmark';
-        }
-        
-        // 保存语言偏好
-        localStorage.setItem('atlas-language', targetLang);
-        
-        // 更新数据剖析部分的领域显示
-        if (typeof renderSample === 'function' && typeof currentSampleIndex !== 'undefined') {
-            renderSample(currentSampleIndex);
-        }
-        
-        // 重新创建图表以更新标签语言
-        if (typeof createChart === 'function') {
-            setTimeout(() => {
-                createChart('chart-public', 'table-public');
-                createChart('chart-private', 'table-private');
-            }, 100);
-        }
-    }
-    
-    // 绑定语言切换按钮事件
-    langButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            switchLanguage(btn.dataset.lang);
-        });
-    });
-    
-    // 初始化语言设置
-    const savedLang = localStorage.getItem('atlas-language') || 'zh';
-    if (savedLang !== 'zh') {
-        switchLanguage(savedLang);
-    }
-
     // --- 语言切换功能 (Language Switching Functionality) ---
     const langButtons = document.querySelectorAll('.lang-btn');
     const langContents = document.querySelectorAll('.lang-content');
@@ -1332,13 +1025,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const samples = [
     {
         domain: { zh: "数学", en: "Mathematics" },
-        domain: { zh: "数学", en: "Mathematics" },
         question: "Let $p$ be an odd prime, and let $m \\geq 0$ and $N \\geq 1$ be integers. Let $\\Lambda$ be a free $\\mathbb{Z}/p^N\\mathbb{Z}$-module of rank $2m + 1$, and let \\[ (,): \\Lambda \\times \\Lambda \\to \\mathbb{Z}/p^N\\mathbb{Z} \\] be a perfect symmetric $\\mathbb{Z}/p^N\\mathbb{Z}$-bilinear form. Here, 'perfect' means that the induced map \\[ \\Lambda \\to \\text{Hom}_{\\mathbb{Z}/p^N\\mathbb{Z}}(\\Lambda, \\mathbb{Z}/p^N\\mathbb{Z}), \\quad x \\mapsto (x, \\cdot) \\] is an isomorphism. Find the number of elements in the set \\[ \\{ x \\in \\Lambda \\mid (x, x) = 0 \\} \\] as a function of $p, m, N$.",
         answer: "$p^{(2m+1)r + 2m(N-2r)} + \\frac{p^{(2m+1)r} - 1}{p^{(2m+1)} - 1} p^{(2m+1)r-1 + 2m(N-2r)} (p^{2m} - 1)$, where $r := \\lfloor N/2 \\rfloor$",
         organization: "Fudan University"
     },
         {
-            domain: { zh: "生物", en: "Biology" },
             domain: { zh: "生物", en: "Biology" },
             question: "Background: In the innate immune system, RIG-I-like receptor (RLR) family proteins recognize viral RNA in the cytoplasm, triggering the downstream mitochondrial antiviral signaling protein (MAVS). MAVS acts as a signaling adapter, recruiting multiple proteins to form the MAVS signalosome, which activates transcription factors IRF3 and NF-$\\kappa$B, inducing the expression of type I and type III interferons (IFNs) and other antiviral genes",
             answer: "1. Central disordered region\n2. 3'UTR (3' Untranslated Region)\n3. MAVS signalosome complex; phosphorylation level",
@@ -1346,7 +1037,6 @@ document.addEventListener('DOMContentLoaded', () => {
         },
 
         {
-            domain: { zh: "计算机科学", en: "Computer Science" },
             domain: { zh: "计算机科学", en: "Computer Science" },
             question: "Given an array $A[1:n]$ of $n$ distinct numbers, recall the *quicksort* algorithm to sort them into an ascending order.\n\n* First we let $p\\gets A[1]$ be the pivot.\n* Then we use $p$ to rearrange $A[1:n]$ in the following way:\n  * For some $k\\in [n]$, we have $A[k]=p$;\n  * For all $i\\in \\set{1,2,\\dots,k-1}$, we have $A[i]<p$;\n  * For all $i\\in \\set{k+1,\\dots,n}$, we have $A[i]>p$.\n* Then recursively sort $A[1:k-1]$ and $A[k+1;n]$.\n\nAssume our algorithm used in step 2 to compute $A[1:k-1]$ and $A[k+1:n]$ is *stable*. That is, if $A[i]$ and $A[j]$ are both smaller or larger than $p$ and $i<j$, then after the rearrangement, $A[i]$ still appear before $A[j]$.\n\nClearly the performance of the algorithm depends on the input array $A$. In this problem, we analyze its *average complexity*. Suppose that the input array $A$ is chosen uniformly at random from the $n!$ permutations of the $n$ distinct numbers. Let $t_n$ be the average times of comparisons during the execution of quicksort (the average is taken over all inputs).\n\nFind the general expression for $t_n$. (In the problem, we do care about the constant appearing in the main term. As a result, your expression should be of the form $t_n=f(n)(1+o(1))$ for some $f(n)$)",
             answer: "$2n\\log n \\cdot (1+o(1))$",
@@ -1368,20 +1058,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         
-        if (!samples || !samples[index]) {
-            console.error('Sample data not available');
-            return;
-        }
-        
         const sample = samples[index];
-        const currentLangBtn = document.querySelector('.lang-btn.active');
-        const currentLang = currentLangBtn ? currentLangBtn.dataset.lang : 'zh';
-        
-        if (questionEl) questionEl.textContent = sample.question;
-        if (answerEl) answerEl.textContent = sample.answer;
-        if (organizationEl) organizationEl.textContent = sample.organization;
-        if (domainEl) domainEl.textContent = sample.domain[currentLang] || sample.domain.zh;
-        
         const currentLangBtn = document.querySelector('.lang-btn.active');
         const currentLang = currentLangBtn ? currentLangBtn.dataset.lang : 'zh';
         
@@ -1418,24 +1095,93 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         renderSample(currentSampleIndex);
     }, 100);
-    setTimeout(() => {
-        renderSample(currentSampleIndex);
-    }, 100);
 
     // --- 排行榜模块 (Leaderboard Module) ---
     const tabs = document.querySelectorAll('.tab-btn');
     const contents = document.querySelectorAll('.leaderboard-content');
     const charts = {};
 
-    function createChart(canvasId, tableId) {
-        const table = document.getElementById(tableId);
-        const canvas = document.getElementById(canvasId);
-        
-        if (!table || !canvas) {
-            console.error(`Table ${tableId} or Canvas ${canvasId} not found`);
-            return;
+    // 远程排行榜数据 URL
+    const LEADERBOARD_DATA_URL = 'https://opencompass.oss-cn-shanghai.aliyuncs.com/atlas-web/leaderboard_data.json';
+
+    // 填充表格数据的通用函数
+    function populateTable(tableId, entries) {
+        const tbody = document.querySelector(`#${tableId} tbody`);
+        if (!tbody) {
+            console.error(`Table ${tableId} tbody not found`);
+            return false;
         }
         
+        // 清空现有数据
+        tbody.innerHTML = '';
+        
+        // 填充新数据
+        entries.forEach(entry => {
+            const row = document.createElement('tr');
+            
+            // 判断访问类型的标签样式
+            const accessTag = entry.access === 'API' 
+                ? '<span class="tag api">API</span>' 
+                : '<span class="tag open">Open</span>';
+            
+            row.innerHTML = `
+                <td>${entry.rank}</td>
+                <td><a href="#">${entry.model}</a></td>
+                <td>${entry.organization}</td>
+                <td>${accessTag}</td>
+                <td>${entry.accuracy}%</td>
+                <td>${entry.mg_pass_2}%</td>
+                <td>${entry.mg_pass_4}%</td>
+                <td>${entry.tokens}</td>
+            `;
+            tbody.appendChild(row);
+        });
+        
+        return true;
+    }
+
+    // 从远程加载排行榜数据（公开集和私有集）
+    async function loadLeaderboardData() {
+        try {
+            const response = await fetch(LEADERBOARD_DATA_URL);
+            if (!response.ok) {
+                console.warn('Failed to load leaderboard data from remote');
+                return false;
+            }
+            
+            const data = await response.json();
+            console.log(`📥 Loaded leaderboard data from OSS (updated: ${data.last_updated})`);
+            
+            // 更新公开集表格
+            if (data.public_leaderboard && data.public_leaderboard.length > 0) {
+                populateTable('table-public', data.public_leaderboard);
+                console.log(`✅ Public leaderboard: ${data.public_leaderboard.length} entries`);
+            }
+            
+            // 更新私有集表格
+            if (data.private_leaderboard && data.private_leaderboard.length > 0) {
+                populateTable('table-private', data.private_leaderboard);
+                console.log(`✅ Private leaderboard: ${data.private_leaderboard.length} entries`);
+            }
+            
+            // 重新创建图表
+            setTimeout(() => {
+                createChart('chart-public', 'table-public');
+                createChart('chart-private', 'table-private');
+            }, 100);
+            
+            return true;
+            
+        } catch (error) {
+            console.error('❌ Error loading leaderboard data:', error);
+            return false;
+        }
+    }
+    
+    // 页面加载时自动加载排行榜数据
+    loadLeaderboardData();
+
+    function createChart(canvasId, tableId) {
         const table = document.getElementById(tableId);
         const canvas = document.getElementById(canvasId);
         
@@ -1466,14 +1212,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     mgpass: parseFloat(row.cells[6].innerText) // mG-Pass@4 在第6列
                 });
             }
-            if (row.cells.length >= 7) {
-                // 现在两个表格都有8列，mG-Pass@4都在第6列（索引6）
-                tableData.push({
-                    label: row.cells[1].innerText,
-                    accuracy: parseFloat(row.cells[4].innerText),
-                    mgpass: parseFloat(row.cells[6].innerText) // mG-Pass@4 在第6列
-                });
-            }
         }
 
         tableData.sort((a, b) => a.accuracy - b.accuracy);
@@ -1494,7 +1232,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 labels: labels,
                 datasets: [
                     {
-                        label: document.querySelector('.lang-btn.active').dataset.lang === 'zh' ? '准确率 (Avg)' : 'Accuracy (Avg)',
                         label: document.querySelector('.lang-btn.active').dataset.lang === 'zh' ? '准确率 (Avg)' : 'Accuracy (Avg)',
                         data: accuracyData,
                         backgroundColor: chartColor1,
@@ -1553,15 +1290,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = button.dataset.target;
 
             if (!target) return;
-        tab.addEventListener('click', (e) => {
-            // 确保获取按钮元素，即使点击的是内部的span
-            const button = e.currentTarget;
-            const target = button.dataset.target;
-
-            if (!target) return;
 
             tabs.forEach(t => t.classList.remove('active'));
-            button.classList.add('active');
             button.classList.add('active');
 
             contents.forEach(content => {
@@ -1581,27 +1311,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }, 50);
             }
-            const targetLeaderboard = document.getElementById(`leaderboard-${target}`);
-            if (targetLeaderboard) {
-                targetLeaderboard.classList.add('active');
-                
-                // 切换后重新渲染对应的图表，确保图表正确显示
-                setTimeout(() => {
-                    if (target === 'public') {
-                        createChart('chart-public', 'table-public');
-                    } else if (target === 'private') {
-                        createChart('chart-private', 'table-private');
-                    }
-                }, 50);
-            }
         });
     });
     
     // Initial chart creation
-    setTimeout(() => {
-        createChart('chart-public', 'table-public');
-        createChart('chart-private', 'table-private');
-    }, 200);
     setTimeout(() => {
         createChart('chart-public', 'table-public');
         createChart('chart-private', 'table-private');
