@@ -987,11 +987,19 @@ document.addEventListener('DOMContentLoaded', () => {
             renderSample(currentSampleIndex);
         }
         
-        // 重新创建图表以更新标签语言
+        // 重新创建图表以更新标签语言（只有当表格有数据时才创建）
         if (typeof createChart === 'function') {
             setTimeout(() => {
-                createChart('chart-public', 'table-public');
-                createChart('chart-private', 'table-private');
+                // 检查表格是否有数据行
+                const publicTable = document.getElementById('table-public');
+                const privateTable = document.getElementById('table-private');
+                
+                if (publicTable && publicTable.rows.length > 1) {
+                    createChart('chart-public', 'table-public');
+                }
+                if (privateTable && privateTable.rows.length > 1) {
+                    createChart('chart-private', 'table-private');
+                }
             }, 100);
         }
     }
@@ -1003,10 +1011,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // 初始化语言设置
+    // 初始化语言设置（延迟到数据加载后）
     const savedLang = localStorage.getItem('atlas-language') || 'zh';
+    let languageInitialized = false;
+    
+    // 如果保存的语言不是中文，等待数据加载完成后再切换
     if (savedLang !== 'zh') {
-        switchLanguage(savedLang);
+        // 先设置一个标记，等数据加载完成后再切换
+        languageInitialized = false;
+    } else {
+        languageInitialized = true;
     }
 
     // --- Chart.js 全局颜色配置 (Global Chart.js Color Configuration) ---
@@ -1164,16 +1178,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(`✅ Private leaderboard: ${data.private_leaderboard.length} entries`);
             }
             
-            // 重新创建图表
-            setTimeout(() => {
-                createChart('chart-public', 'table-public');
-                createChart('chart-private', 'table-private');
-            }, 100);
+            // 如果语言还没有初始化（保存的是英文），现在切换语言（在数据填充完成后）
+            if (!languageInitialized && savedLang !== 'zh') {
+                switchLanguage(savedLang);
+                languageInitialized = true;
+                // switchLanguage 中已经会创建图表（有数据检查），这里不需要重复创建
+            } else {
+                // 如果语言已经是中文（默认），检查表格有数据后再创建图表
+                setTimeout(() => {
+                    const publicTable = document.getElementById('table-public');
+                    const privateTable = document.getElementById('table-private');
+                    
+                    if (publicTable && publicTable.rows.length > 1) {
+                        createChart('chart-public', 'table-public');
+                    }
+                    if (privateTable && privateTable.rows.length > 1) {
+                        createChart('chart-private', 'table-private');
+                    }
+                }, 100);
+            }
             
             return true;
             
         } catch (error) {
             console.error('❌ Error loading leaderboard data:', error);
+            // 即使加载失败，也要初始化语言
+            if (!languageInitialized && savedLang !== 'zh') {
+                switchLanguage(savedLang);
+                languageInitialized = true;
+            }
             return false;
         }
     }
@@ -1212,6 +1245,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     mgpass: parseFloat(row.cells[6].innerText) // mG-Pass@4 在第6列
                 });
             }
+        }
+
+        // 如果没有数据，不创建图表
+        if (tableData.length === 0) {
+            console.warn(`No data available for ${canvasId}, skipping chart creation`);
+            return;
         }
 
         tableData.sort((a, b) => a.accuracy - b.accuracy);
@@ -1314,11 +1353,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Initial chart creation
-    setTimeout(() => {
-        createChart('chart-public', 'table-public');
-        createChart('chart-private', 'table-private');
-    }, 200);
+    // 图表创建由 loadLeaderboardData 负责，不需要在这里初始化
 
 });
 </script>
